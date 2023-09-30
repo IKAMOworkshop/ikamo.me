@@ -5,6 +5,7 @@ export default defineType({
   title: 'Post',
   type: 'document',
   fields: [
+
     defineField({
       name: 'title',
       title: 'Title',
@@ -20,40 +21,84 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Main image',
+      name: 'eventDate',
+      title: 'Event date',
+      type: 'date',
+      options: {
+        dateFormat: 'YYYY-MM',
+      },
+    }),
+    defineField({
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'tags'}}],
+    }),
+    defineField({
+      name:'description',
+      title: 'Description',
+      type: 'text',
+    }),
+    defineField({
+      name: 'thumbnailImage',
+      title: 'Thumbnail image',
       type: 'image',
       options: {
         hotspot: true,
       },
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      name:'firstImage',
+      title: 'First image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
+      name:'secondImage',
+      title: 'Second image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      name:'thirdImage',
+      title: 'Third image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
+    defineField({
+      name:'fourthImage',
+      title: 'Fourth image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name:'fifthImage',
+      title: 'Fifth image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+
   ],
 
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
+      tags: 'tags.name',
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const {tags} = selection
+      return {...selection, subtitle: tags && `by ${tags}`}
     },
   },
 })
