@@ -67,6 +67,12 @@ nav {
   align-items: center;
   gap: 8px;
 }
+.light-mode-nav .nav-menu-link {
+  color: rgb(237, 244, 255);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 .light-mode-nav .link-underline {
   width: 100%;
   height: 1px;
@@ -85,13 +91,6 @@ nav {
 }
 .light-mode-nav .social-link:hover {
   opacity: 1;
-}
-.light-mode-nav .nav-menu-link {
-  color: rgb(237, 244, 255);
-  font-size: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
 }
 
 * {
@@ -115,4 +114,54 @@ button {
 
 a {
   text-decoration: none;
+}
+
+.hero-title {
+  font-size: 14rem;
+  font-weight: 700;
+}
+
+.project-list-title {
+  font-size: 8rem;
+  font-weight: 300;
+}
+
+.section-title {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+.section-body {
+  font-size: 6rem;
+  font-weight: 300;
+}
+
+.project-description {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.about-body {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.project-tag {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.body-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.body {
+  font-size: 1rem;
+  font-weight: 400;
 }/*# sourceMappingURL=style.css.map */
