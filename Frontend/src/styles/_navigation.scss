@@ -9,6 +9,18 @@ nav{
     justify-content: space-between;
 }
 
+.circle-accent{
+    width: 720px;
+    height: 720px;
+    position: absolute;
+    z-index: -100;
+    top: -240px;
+    right: -240px;
+    border-radius: 100%;
+    border: 1px solid;
+    border-color: rgba(167, 199, 255, 1);
+}
+
 .light-mode-nav{
     .nav-logo{
         transition: all .5s ease;
