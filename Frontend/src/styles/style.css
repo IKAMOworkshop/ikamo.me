@@ -1,4 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+nav {
+  width: 100%;
+  min-width: 100%;
+  padding: 44px 60px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.light-mode-nav .nav-logo {
+  transition: all 0.5s ease;
+}
+.light-mode-nav .nav-logo:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+.light-mode-nav .nav-menu-button {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(38, 40, 45);
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+.light-mode-nav .nav-menu-button:hover {
+  transform: scale(1.2);
+}
+.light-mode-nav .menu-icon {
+  fill: rgb(237, 244, 255);
+  transition: all 0.5s ease;
+}
+.light-mode-nav .open-menu {
+  background-color: rgb(38, 40, 45);
+  padding: 36px 32px;
+  border-radius: 20px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  opacity: 0;
+  transform-origin: 50% 20%;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+}
+.light-mode-nav .menu-button-block {
+  height: 80px;
+}
+.light-mode-nav .page-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.light-mode-nav .link-underline {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(237, 244, 255);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: all 0.5s ease;
+}
+.light-mode-nav .social-links {
+  display: flex;
+  gap: 16px;
+}
+.light-mode-nav .social-link {
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+.light-mode-nav .social-link:hover {
+  opacity: 1;
+}
+.light-mode-nav .nav-menu-link {
+  color: rgb(237, 244, 255);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgb(237, 244, 255);
-  height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+a {
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
