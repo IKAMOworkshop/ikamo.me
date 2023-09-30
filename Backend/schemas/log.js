@@ -10,6 +10,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required().uppercase()
     }),
     defineField({
       name: 'slug',
@@ -25,19 +26,24 @@ export default defineType({
       title: 'Event date',
       type: 'date',
       options: {
-        dateFormat: 'YYYY-MM',
+        dateFormat: 'MMM YYYY',
       },
     }),
     defineField({
       name: 'tags',
       title: 'Tags',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'tags'}}],
+      type: 'reference',
+      to: {type: 'tags'},
     }),
     defineField({
       name:'description',
       title: 'Description',
       type: 'text',
+    }),
+    defineField({
+      name:'logEmoji',
+      title: 'Log Emoji',
+      type: 'string',
     }),
     defineField({
       name: 'thumbnailImage',
@@ -87,18 +93,6 @@ export default defineType({
         hotspot: true,
       },
     }),
-
   ],
-
-  preview: {
-    select: {
-      title: 'title',
-      tags: 'tags.name',
-      media: 'mainImage',
-    },
-    prepare(selection) {
-      const {tags} = selection
-      return {...selection, subtitle: tags && `by ${tags}`}
-    },
-  },
+  
 })
