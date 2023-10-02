@@ -10,6 +10,7 @@
 body{
     background-color: rgba(237, 244, 255, 1);
     font-family: 'Inter', sans-serif;
+    overflow: hidden;
 }
 
 button{
@@ -55,6 +56,11 @@ a{
 .about-body{
     font-size: 2rem;
     font-weight: 700;
+}
+
+.about-body-light{
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 .project-title{

@@ -1,0 +1,53 @@
+---
+
+---
+
+<footer>
+    <div class="footer-logo">
+        <h1 class="footer-logo-title about-body">IKAMO</h1>
+        <div class="logo-accent">
+            <h2 class="about-body-light footer-logo-title">log</h2>
+            <h2 class="about-body-light footer-logo-title">design</h2>
+            <h2 class="about-body-light footer-logo-title">develop</h2>
+            <h2 class="about-body-light footer-logo-title">workshop</h2>
+        </div>
+    </div>
+    <div class="footer-contact">
+        <div class="contact-container">
+            <button id="email-link" class="footer-link about-body-light">
+                my eamil.
+                <div id="email-underline" class="link-underline"></div>
+            </button>
+            <a id="footer-about-link" href="/about" class="footer-link about-body-light">
+                about me.
+                <div id="footer-about-underline" class="link-underline"></div>
+            </a>
+        </div>
+        <div class="copy-right">
+            <p class="body">©2023</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const emailLink = document.getElementById('email-link');
+    const emailUnderline = document.getElementById('email-underline');
+    const aboutLink = document.getElementById('footer-about-link');
+    const aboutUnderline = document.getElementById('footer-about-underline');
+
+    emailLink.addEventListener('mouseover', () => {
+        emailUnderline.style.transform = 'scaleX(1)';
+    });
+
+    emailLink.addEventListener('mouseout', () => {
+        emailUnderline.style.transform = 'scaleX(0)';
+    });
+
+    aboutLink.addEventListener('mouseover', () => {
+        aboutUnderline.style.transform = 'scaleX(1)';
+    });
+
+    aboutLink.addEventListener('mouseout', () => {
+        aboutUnderline.style.transform = 'scaleX(0)';
+    });
+</script>
