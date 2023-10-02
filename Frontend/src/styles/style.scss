@@ -1,4 +1,5 @@
 @import './navigation';
+@import './landing.scss';
 
 // font imports
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
@@ -10,7 +11,7 @@
 body{
     background-color: rgba(237, 244, 255, 1);
     font-family: 'Inter', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 button{
@@ -27,10 +28,16 @@ a{
     text-decoration: none;
 }
 
+.container{
+    padding: 0px 60px;
+}
+
 // Typography
 .hero-title{
     font-size: 14rem;
     font-weight: 700;
+    line-height: 13rem;
+    width: 880px;
 }
 
 .project-list-title{

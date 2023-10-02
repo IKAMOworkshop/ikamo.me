@@ -97,10 +97,9 @@ footer {
   width: 100%;
   padding: 60px;
   background-color: rgb(58, 130, 255);
-  position: absolute;
-  bottom: 0;
   display: flex;
   justify-content: space-between;
+  margin-top: 60px;
 }
 
 .footer-logo {
@@ -161,6 +160,71 @@ footer {
   transition: all 0.5s ease;
 }
 
+.nav-text {
+  width: 100%;
+  margin: 60px 0px 96px 0px;
+  display: flex;
+}
+
+.nav-text-blocker {
+  width: 50%;
+  height: auto;
+}
+
+.nav-text-group {
+  width: 50%;
+  display: flex;
+  gap: 160px;
+}
+
+.nav-text-title {
+  color: rgb(38, 40, 45);
+  width: 280px;
+}
+
+.nav-body-group {
+  padding-top: 8px;
+}
+
+.nav-text-body {
+  color: rgb(38, 40, 45);
+}
+
+.nav-body-group > .nav-text-body:nth-child(1) {
+  opacity: 0.5;
+}
+
+.nav-body-group > .nav-text-body:nth-child(2) {
+  opacity: 0.3;
+}
+
+.nav-body-group > .nav-text-body:nth-child(3) {
+  opacity: 0.2;
+}
+
+.nav-body-group > .nav-text-body:nth-child(4) {
+  opacity: 0.1;
+}
+
+.page-header {
+  color: rgb(38, 40, 45);
+  margin-bottom: 100px;
+}
+
+.log-tiles {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.log-tile {
+  width: 100%;
+  height: 600px;
+  background-color: blue;
+  border-radius: 40px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -168,7 +232,7 @@ footer {
 body {
   background-color: rgb(237, 244, 255);
   font-family: "Inter", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 button {
@@ -185,9 +249,15 @@ a {
   text-decoration: none;
 }
 
+.container {
+  padding: 0px 60px;
+}
+
 .hero-title {
   font-size: 14rem;
   font-weight: 700;
+  line-height: 13rem;
+  width: 880px;
 }
 
 .project-list-title {
