@@ -1,0 +1,47 @@
+.log-header{
+    width: 100%;
+    padding: 100px 148px 0px 148px;
+    display: flex;
+    margin-bottom: 200px;
+}
+
+.log-text-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 180px;
+}
+
+.thumbnail-image{
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.log-text-containter, .log-detail-container, .log-title-container, .log-image-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.log-text-containter{
+    gap: 160px;
+}
+
+.log-detail-container{
+    gap: 60px;
+}
+
+.log-title-container{
+    gap: 8px;
+}
+
+.log-image-container{
+    gap: 36px;
+}
+
+.log-image{
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+}

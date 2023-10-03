@@ -8,6 +8,7 @@ nav{
     top: 0;
     display: flex;
     justify-content: space-between;
+    z-index: 1000;
 }
 
 .circle-accent{
@@ -20,6 +21,31 @@ nav{
     border-radius: 100%;
     border: 1px solid;
     border-color: rgba(167, 199, 255, 1);
+    z-index: -1;
+}
+
+.back-button{
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    z-index: 1001;
+    top: -200px;
+    left: -200px;
+    border-radius: 100%;
+    border: 1px solid;
+    border-color: rgba(167, 199, 255, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    transition: all 1s ease;
+}
+
+.back-button:hover{
+    width: 320px;
+    height: 320px;
+    transform: translate(140px, 140px);
+    background-color: rgba(167, 199, 255, 1);
 }
 
 .light-mode-nav{

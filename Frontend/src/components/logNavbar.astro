@@ -1,0 +1,91 @@
+---
+import mailIcon from '../assets/icons/Mail.svg';
+import githubIcon from '../assets/icons/Github.svg';
+import linkedinIcon from '../assets/icons/Linkedin.svg';
+import backArrow from '../assets/icons/back-arrow.svg';
+---
+
+<nav class="light-mode-nav">
+    <div class="blocker"></div>
+    <div class="nav-menu">
+        <button id="menu-button" class="nav-menu-button">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="menu-icon" class="menu-icon" fill-rule="evenodd" clip-rule="evenodd" d="M29.1429 10.7143H10.2857C9.77143 10.7143 9.42857 10.3714 9.42857 9.85714C9.42857 9.34286 9.77143 9 10.2857 9H29.1429C29.6571 9 30 9.34286 30 9.85714C30 10.3714 29.6571 10.7143 29.1429 10.7143ZM6.85714 16.7143H29.1429C29.6571 16.7143 30 17.0571 30 17.5714C30 18.0857 29.6571 18.4286 29.1429 18.4286H6.85714C6.34286 18.4286 6 18.0857 6 17.5714C6 17.0571 6.34286 16.7143 6.85714 16.7143ZM29.1429 24.4286H6.85714C6.34286 24.4286 6 24.7714 6 25.2857C6 25.8 6.34286 26.1429 6.85714 26.1429H29.1429C29.6571 26.1429 30 25.8 30 25.2857C30 24.7714 29.6571 24.4286 29.1429 24.4286ZM6.85714 10.7143C7.33053 10.7143 7.71429 10.3306 7.71429 9.85717C7.71429 9.38379 7.33053 9.00003 6.85714 9.00003C6.38376 9.00003 6 9.38379 6 9.85717C6 10.3306 6.38376 10.7143 6.85714 10.7143Z" fill="white"/>
+            </svg>                
+        </button>
+        <div id="open-menu" class="open-menu">
+            <div class="menu-button-block"></div>
+            <div class="page-links">
+                <a id="home-link" class="nav-menu-link body" href="/">
+                    HOME
+                    <div id="home-underline" class="link-underline"></div>
+                </a>
+                <a id="about-link" class="nav-menu-link" href="/about">
+                    ABOUT
+                    <div id="about-underline" class="link-underline"></div>
+                </a>
+            </div>
+            <div class="social-links">
+                <button><img src={mailIcon.src} alt="" class="social-link"></button>
+                <a target="_blank" href=""><img src={githubIcon.src} alt="" class="social-link"></a>
+                <a target="_blank" href=""><img src={linkedinIcon.src} alt="" class="social-link"></a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<a class="back-button" href="/" class="logo">
+    <img src={backArrow.src} alt="">
+</a>
+
+<script>
+    const menuButton = document.getElementById('menu-button');
+    const navMenu = document.getElementById('open-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const homeLink = document.getElementById('home-link');
+    const homeUnderline = document.getElementById('home-underline');
+    const aboutLink = document.getElementById('about-link');
+    const aboutUnderline = document.getElementById('about-underline');
+
+    // Menu Toggle
+    function toggleMenu(): void{
+        const styleCheck = navMenu.style.opacity;
+        if(styleCheck == '1'){
+            return closeMenu();
+        }
+        return openMenu();
+    };
+
+    function closeMenu(){
+        navMenu.style.opacity = '0';
+        navMenu.style.transform = 'scale(.8)';
+        menuButton.style.backgroundColor = 'rgba(38, 40, 45, 1)';
+        menuIcon.style.fill= 'rgba(237, 244, 255, 1)';
+    };
+
+    function openMenu(){
+        navMenu.style.opacity = '1';
+        navMenu.style.transform = 'scale(1)';
+        menuButton.style.backgroundColor = 'rgba(237, 244, 255, 1)';
+        menuIcon.style.fill= 'rgba(38, 40, 45, 1)';
+    };
+
+    menuButton.addEventListener('click', toggleMenu);
+
+    // Underline Hover Animation
+    homeLink.addEventListener('mouseover', () =>{
+        homeUnderline.style.transform = 'scaleX(1)';
+    });
+
+    homeLink.addEventListener('mouseout', () =>{
+        homeUnderline.style.transform = 'scaleX(0)';
+    });
+
+    aboutLink.addEventListener('mouseover', () =>{
+        aboutUnderline.style.transform = 'scaleX(1)';
+    });
+
+    aboutLink.addEventListener('mouseout', () =>{
+        aboutUnderline.style.transform = 'scaleX(0)';
+    });
+</script>

@@ -8,6 +8,7 @@ nav {
   top: 0;
   display: flex;
   justify-content: space-between;
+  z-index: 1000;
 }
 
 .circle-accent {
@@ -20,6 +21,31 @@ nav {
   border-radius: 100%;
   border: 1px solid;
   border-color: rgb(167, 199, 255);
+  z-index: -1;
+}
+
+.back-button {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  z-index: 1001;
+  top: -200px;
+  left: -200px;
+  border-radius: 100%;
+  border: 1px solid;
+  border-color: rgb(167, 199, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  transition: all 1s ease;
+}
+
+.back-button:hover {
+  width: 320px;
+  height: 320px;
+  transform: translate(140px, 140px);
+  background-color: rgb(167, 199, 255);
 }
 
 .light-mode-nav .nav-logo {
@@ -221,8 +247,15 @@ footer {
 .log-tile {
   width: 100%;
   height: 600px;
-  background-color: rgb(210, 217, 235);
   border-radius: 40px;
+  display: flex;
+  align-items: end;
+  position: relative;
+}
+
+.log-label {
+  padding: 4px 16px;
+  margin: 40px;
 }
 
 .about-header {
@@ -314,6 +347,54 @@ footer {
   text-align: left;
 }
 
+.log-header {
+  width: 100%;
+  padding: 100px 148px 0px 148px;
+  display: flex;
+  margin-bottom: 200px;
+}
+
+.log-text-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 180px;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.log-text-containter, .log-detail-container, .log-title-container, .log-image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.log-text-containter {
+  gap: 160px;
+}
+
+.log-detail-container {
+  gap: 60px;
+}
+
+.log-title-container {
+  gap: 8px;
+}
+
+.log-image-container {
+  gap: 36px;
+}
+
+.log-image {
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -363,6 +444,16 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.thumb-image-cover {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  z-index: -1;
+  transition: all 1s ease;
 }
 
 .rounded-40 {
@@ -486,6 +577,7 @@ a {
 .project-description {
   font-size: 3rem;
   font-weight: 300;
+  line-height: 3.5rem;
 }
 
 .about-body {

@@ -1,0 +1,47 @@
+---
+import {getAllPosts} from "../../sanity/api.js";
+import { urlForImage} from '../../sanity/urlForImage.js';
+import Layout from '../../layouts/logLayout.astro'
+
+export async function getStaticPaths() {
+    const allBlogPosts = await getAllPosts();
+    return allBlogPosts.map(post => ({ params: { slug: post.slug.current }, props: { post } }));
+};
+
+const { post } = Astro.props;
+---
+
+<Layout title={post.title}>
+
+	<main class="container">
+
+        <div class="log-header">
+            <div class="col-50 log-text-header">
+                <div class="log-text-containter">
+                    <div class="log-detail-container">
+                        <div class="log-title-container">
+                            <h1 class="project-title midnight-text-color">{post.title}</h1>
+                            <p class="body accent-text-color">
+                                {post.eventDate} | {post.tags}
+                            </p>
+                        </div>
+                        <h2 class="project-description midnight-text-color">{post.description}</h2>
+                    </div>
+                    <p class="body accent-text-color">{post.logEmoji}</p>
+                </div>
+            </div>
+            <div class="col-50 thumbnail-image"><img src={urlForImage(post.thumbnailImage).url()} alt="" class="image-cover"></div>
+        </div>
+
+        <div class="log-image-container">
+            <img src={urlForImage(post.firstImage).url()} alt="" class="log-image">
+            <!-- <img src={urlForImage(post.secondImage).url()} alt="" class="log-image">
+            <img src={urlForImage(post.thirdImage).url()} alt="" class="log-image">
+            <img src={urlForImage(post.fourthImage).url()} alt="" class="log-image">
+            <img src={urlForImage(post.fifthImage).url()} alt="" class="log-image"> -->
+        </div>
+
+
+	</main>
+
+</Layout>

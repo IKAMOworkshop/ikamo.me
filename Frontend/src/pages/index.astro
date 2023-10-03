@@ -2,12 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import '../styles/style.css'
 
+import { getAllPosts } from '../sanity/api.js';
+import { urlForImage} from '../sanity/urlForImage.js';
+
+const posts = await getAllPosts();
 ---
 
 <Layout title="IKAMOlog">
 	<main class="container">
-		<div class="light-mode-home">
 
+		<div class="light-mode-home">
 			<div class="nav-text">
 				<div class="nav-text-blocker"></div>
 				<div class="nav-text-group">
@@ -26,12 +30,15 @@ import '../styles/style.css'
 
 			<h1 class="page-header hero-title">Select moment.</h1>
 
-			<div class="log-tiles">
-				<div class="log-tile"></div>
-				<div class="log-tile"></div>
-				<div class="log-tile"></div>
-				<div class="log-tile"></div>
-			</div>
+			<ul class="log-tiles">
+				{posts.map(post => (
+					<a href={`/logs/${post.slug.current}`} class="log-tile rounded-40">
+						<img src={urlForImage(post.thumbnailImage).url()} alt="" class="thumb-image-cover">
+						<div class="log-label body midnight-text-color light-gray-color rounded-full">{post.title}</div>
+					</a>
+				))}
+			</ul>
 		</div>
+
 	</main>
 </Layout>
