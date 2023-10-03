@@ -3,6 +3,7 @@ import '../styles/reset.css'
 import '../styles/style.css'
 import Navbar from '../components/logNavbar.astro';
 import Footer from '../components/Footer.astro';
+import Cursor from '../components/Cursor.astro';
 
 interface Props {
 	title: string;
@@ -23,6 +24,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<Navbar />
+        <Cursor />
         <div id="element">
             <slot />
             <Footer />

@@ -403,6 +403,7 @@ body {
   background-color: rgb(237, 244, 255);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
+  cursor: none;
 }
 
 button {
@@ -413,10 +414,12 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+  cursor: none;
 }
 
 a {
   text-decoration: none;
+  cursor: none;
 }
 
 .container {
