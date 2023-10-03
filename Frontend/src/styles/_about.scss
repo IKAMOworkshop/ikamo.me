@@ -1,0 +1,90 @@
+.about-header{
+    padding: 240px 0px 0px 0px;
+    margin-bottom: 200px;
+}
+
+.about-log-text-group{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.about-log-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-log-text{
+    .section-body:nth-child(1){
+        opacity: .5;
+    }
+    .section-body:nth-child(2){
+        opacity: .3;
+    }
+    .section-body:nth-child(3){
+        opacity: .2;
+    }
+    .section-body:nth-child(4){
+        opacity: .1;
+    }
+    .section-body:nth-child(5){
+        opacity: .05;
+    }
+}
+
+.grad-portfolio{
+    height: 800px;
+    background-image: url(../assets/about/graduation-portfolio.jpg);
+    background-size: 110%;
+    background-position: center;
+    display: flex;
+    padding: 40px;
+    justify-content: space-between;
+    align-items: end;
+    transition: all 1s ease;
+}
+
+.grad-portfolio:hover{
+    background-size: 120%;
+}
+
+.three-js{
+    height: 800px;
+    background-image: url(../assets/about/three-js.jpg);
+    background-size: 110%;
+    background-position: center;
+    display: flex;
+    padding: 40px;
+    justify-content: space-between;
+    align-items: end;
+    transition: all 1s ease;
+}
+
+.three-js:hover{
+    background-size: 120%;
+}
+
+.project-label{
+    padding: 4px 16px;
+}
+
+.project-links-container{
+    display: flex;
+    gap: 16px;
+}
+
+.project-link{
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease;
+}
+
+.project-link:hover{
+    transform: scale(1.2);
+}
+
+.hero-text-button{
+    text-align: left;
+}
