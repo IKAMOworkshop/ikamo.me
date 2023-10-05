@@ -30,10 +30,9 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'tags',
-      title: 'Tags',
-      type: 'reference',
-      to: {type: 'tags'},
+      name: 'tag',
+      title: 'Tag',
+      type: 'string',
     }),
     defineField({
       name:'description',

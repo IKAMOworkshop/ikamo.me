@@ -22,7 +22,7 @@ const { post } = Astro.props;
                         <div class="log-title-container">
                             <h1 class="project-title midnight-text-color">{post.title}</h1>
                             <p class="body accent-text-color">
-                                {post.eventDate} | {post.tags}
+                                {post.eventDate} | #{post.tag}
                             </p>
                         </div>
                         <h2 class="project-description midnight-text-color">{post.description}</h2>

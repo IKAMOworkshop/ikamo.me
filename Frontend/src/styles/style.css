@@ -25,12 +25,12 @@ nav {
 }
 
 .back-button {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
   position: absolute;
   z-index: 1001;
-  top: -200px;
-  left: -200px;
+  top: -100px;
+  left: -100px;
   border-radius: 100%;
   border: 1px solid;
   border-color: rgb(167, 199, 255);
@@ -42,9 +42,9 @@ nav {
 }
 
 .back-button:hover {
-  width: 320px;
-  height: 320px;
-  transform: translate(140px, 140px);
+  width: 200px;
+  height: 200px;
+  transform: translate(120px, 120px);
   background-color: rgb(167, 199, 255);
 }
 
