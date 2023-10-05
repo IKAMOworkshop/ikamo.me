@@ -1,7 +1,8 @@
 ---
-import {getAllPosts} from "../../sanity/api.js";
-import { urlForImage} from '../../sanity/urlForImage.js';
-import Layout from '../../layouts/logLayout.astro'
+import {getAllPosts } from "../../sanity/api.js";
+import { urlForImage } from '../../sanity/urlForImage.js';
+import Layout from '../../layouts/logLayout.astro';
+import PortableText from "../../components/PortableText.astro";
 
 export async function getStaticPaths() {
     const allBlogPosts = await getAllPosts();
@@ -34,11 +35,7 @@ const { post } = Astro.props;
         </div>
 
         <div class="log-image-container">
-            <img src={urlForImage(post.firstImage).url()} alt="" class="log-image">
-            <!-- <img src={urlForImage(post.secondImage).url()} alt="" class="log-image">
-            <img src={urlForImage(post.thirdImage).url()} alt="" class="log-image">
-            <img src={urlForImage(post.fourthImage).url()} alt="" class="log-image">
-            <img src={urlForImage(post.fifthImage).url()} alt="" class="log-image"> -->
+            <PortableText portableText={post.content}/>
         </div>
 
 

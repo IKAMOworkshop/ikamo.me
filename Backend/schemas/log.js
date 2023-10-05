@@ -53,44 +53,13 @@ export default defineType({
       },
     }),
     defineField({
-      name:'firstImage',
-      title: 'First image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name:'secondImage',
-      title: 'Second image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name:'thirdImage',
-      title: 'Third image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name:'fourthImage',
-      title: 'Fourth image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name:'fifthImage',
-      title: 'Fifth image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      title: 'Content', 
+      name: 'content',
+      type: 'array', 
+      of: [
+        {type: 'block'},
+        {type: 'image'}
+      ]
     }),
   ],
   
