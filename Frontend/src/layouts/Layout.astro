@@ -25,7 +25,8 @@ const { title } = Astro.props;
 	<body>
 		<Navbar />
 		<Cursor />
-		<div id="element">
+		<div id="element" class="container-body">
+			<div class="circle-accent"></div>
 			<slot />
 			<Footer />
 		</div>

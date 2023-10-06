@@ -6,15 +6,27 @@
 // font imports
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
+$primary: rgba(58, 130, 255, 1);
+$accent:rgba(167, 199, 255, 1);
+$midnight:rgba(38, 40, 45, 1);
+$gray:rgba(108, 118, 144, 1);
+$light-gray:rgba(237, 244, 255, 1);
+
 *{
     box-sizing: border-box;
 }
 
 body{
-    background-color: rgba(237, 244, 255, 1);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     cursor: none;
+}
+
+.container-body{
+    width: 100%;
+    min-width: 100%;
+    background-color: $light-gray;
+    transition: background-color 0.5s ease;
 }
 
 button{
@@ -34,7 +46,7 @@ a{
 }
 
 .container{
-    padding: 0px 60px;
+    position: relative;
 }
 
 .section-container{
@@ -118,46 +130,129 @@ a{
     width: 50%;
 }
 
-// Typography Color
-.primary-text-color{
-    color: rgba(58, 130, 255, 1);
+.mode-switcher{
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    gap: 4px;
+    z-index: 500;
+    border-radius: 20px;
 }
 
-.accent-text-color{
-    color: rgba(167, 199, 255, 1);
-}
-
-.midnight-text-color{
+.mode-button{
+    width: 100px;
+    height: 48px;
+    border-radius: 16px;
     color: rgba(38, 40, 45, 1);
+    transition: all .5s ease;
 }
 
-.gary-text-color{
-    color: rgba(108, 118, 144, 1);
+.mode-button:hover{
+    background-color: $accent;
 }
 
-.light-gray-text-color{
+.mode-switcher > .active{
+    background-color: rgba(38, 40, 45, 1);
     color: rgba(237, 244, 255, 1);
 }
 
-// Background Color
-.primary-color{
-    background-color: rgba(58, 130, 255, 1);
+// Colors
+.light-mode{
+    padding: 0px 60px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    .primary-text-color{
+        color: $primary;
+    }
+    
+    .accent-text-color{
+        color: $accent;
+    }
+    
+    .midnight-text-color{
+        color: $midnight;
+    }
+    
+    .gary-text-color{
+        color: $gray;
+    }
+    
+    .light-gray-text-color{
+        color: $light-gray;
+    }
+    
+    // Background Color
+    .primary-color{
+        background-color: $primary;
+    }
+    
+    .accent-color{
+        background-color: $accent;
+    }
+    
+    .midnight-color{
+        background-color: $midnight;
+    }
+    
+    .gary-color{
+        background-color: $gray;
+    }
+    
+    .light-gray-color{
+        background-color: $light-gray;
+    }
 }
 
-.accent-color{
-    background-color: rgba(167, 199, 255, 1);
-}
-
-.midnight-color{
-    background-color: rgba(38, 40, 45, 1);
-}
-
-.gary-color{
-    background-color: rgba(108, 118, 144, 1);
-}
-
-.light-gray-color{
-    background-color: rgba(237, 244, 255, 1);
+.dark-mode{
+    position: absolute;
+    top: 0;
+    padding: 0px 60px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    .primary-text-color{
+        color: $primary;
+    }
+    
+    .accent-text-color{
+        color: $accent;
+    }
+    
+    .midnight-text-color{
+        color: $light-gray;
+    }
+    
+    .gary-text-color{
+        color: $gray;
+    }
+    
+    .light-gray-text-color{
+        color: $midnight;
+    }
+    
+    // Background Color
+    .primary-color{
+        background-color: $primary;
+    }
+    
+    .accent-color{
+        background-color: $accent;
+    }
+    
+    .midnight-color{
+        background-color: $light-gray;
+    }
+    
+    .gary-color{
+        background-color: $gray;
+    }
+    
+    .light-gray-color{
+        background-color: $midnight;
+    }
 }
 
 // Typography
@@ -199,6 +294,7 @@ a{
 .about-body{
     font-size: 2rem;
     font-weight: 700;
+    line-height: 2.5rem;
 }
 
 .about-body-light{
