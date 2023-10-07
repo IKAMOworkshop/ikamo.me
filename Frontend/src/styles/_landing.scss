@@ -68,7 +68,10 @@
 
 .log-tile:hover{
     opacity: 1;
-    transform: scale(1.05);
+}
+
+.log-tile:hover > .thumb-image-cover{
+    transform: scale(1.1);
 }
 
 .log-label{
@@ -102,4 +105,9 @@
 .log-tiles-dark:has(.over:hover) .log-tile-dark:not(.over:hover){
     opacity: 0.1;
     filter: blur(4px);
+}
+
+.log-tile-dark:hover > .thumb-image-hover{
+    opacity: .5;
+    transform: scale(1);
 }

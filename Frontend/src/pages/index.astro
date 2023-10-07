@@ -68,6 +68,7 @@ const posts = await getAllPosts();
 				{posts.map(post => (
 					<a href={`/logs/${post.slug.current}`} class="log-tile-dark over">
 						<h1 class="midnight-text-color project-list-title">{post.title}</h1>
+						<img src={urlForImage(post.thumbnailImage).url()} alt="" class="thumb-image-hover rounded-40">
 					</a>
 					<div class="log-separator midnight-color"></div>
 				))}
