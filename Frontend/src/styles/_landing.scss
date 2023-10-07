@@ -77,6 +77,12 @@
 .log-label{
     padding: 4px 16px;
     margin: 40px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.log-tile:hover > .log-label{
+    opacity: 1;
 }
 
 .log-tiles-dark{
