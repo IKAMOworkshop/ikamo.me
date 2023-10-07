@@ -45,10 +45,6 @@ a{
     cursor: none;
 }
 
-.container{
-    position: relative;
-}
-
 .section-container{
     width: 100%;
     margin-bottom: 200px;
@@ -211,6 +207,7 @@ a{
 .dark-mode{
     position: absolute;
     top: 0;
+    width: 100%;
     padding: 0px 60px;
     opacity: 0;
     transition: opacity 0.5s ease;

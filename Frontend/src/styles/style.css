@@ -212,7 +212,6 @@ footer {
 }
 
 .nav-text-title {
-  color: rgb(38, 40, 45);
   width: 280px;
 }
 
@@ -220,28 +219,23 @@ footer {
   padding-top: 8px;
 }
 
-.nav-text-body {
-  color: rgb(38, 40, 45);
-}
-
-.nav-body-group > .nav-text-body:nth-child(1) {
+.nav-body-group > .midnight-text-color:nth-child(1) {
   opacity: 0.5;
 }
 
-.nav-body-group > .nav-text-body:nth-child(2) {
+.nav-body-group > .midnight-text-color:nth-child(2) {
   opacity: 0.3;
 }
 
-.nav-body-group > .nav-text-body:nth-child(3) {
+.nav-body-group > .midnight-text-color:nth-child(3) {
   opacity: 0.2;
 }
 
-.nav-body-group > .nav-text-body:nth-child(4) {
+.nav-body-group > .midnight-text-color:nth-child(4) {
   opacity: 0.1;
 }
 
 .page-header {
-  color: rgb(38, 40, 45);
   margin-bottom: 100px;
 }
 
@@ -260,7 +254,7 @@ footer {
   align-items: end;
   position: relative;
   opacity: 1;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
 }
 
 .log-tiles:has(.over:hover) .log-tile:not(.over:hover) {
@@ -452,10 +446,6 @@ a {
   cursor: none;
 }
 
-.container {
-  position: relative;
-}
-
 .section-container {
   width: 100%;
   margin-bottom: 200px;
@@ -608,6 +598,7 @@ a {
 .dark-mode {
   position: absolute;
   top: 0;
+  width: 100%;
   padding: 0px 60px;
   opacity: 0;
   transition: opacity 0.5s ease;
