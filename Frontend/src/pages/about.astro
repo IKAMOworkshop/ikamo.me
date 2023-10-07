@@ -20,7 +20,7 @@ import externalLink from '../assets/icons/link-arrow.svg';
 
 		<div id="light-mode" class="light-mode">
 			<div class="about-header">
-				<h1 class="hero-title midnight-text-color">Personal log.</h1>
+				<h1 id="hero-light" class="hero-title midnight-text-color">Personal log.</h1>
 			</div>
 
 			<div class="col-system">
@@ -126,7 +126,7 @@ import externalLink from '../assets/icons/link-arrow.svg';
 
 		<div id="dark-mode" class="dark-mode">
 			<div class="about-header">
-				<h1 class="hero-title midnight-text-color">Personal log.</h1>
+				<h1 id="hero-dark" class="hero-title midnight-text-color">Personal log.</h1>
 			</div>
 
 			<div class="col-system">
@@ -234,6 +234,7 @@ import externalLink from '../assets/icons/link-arrow.svg';
 </Layout>
 
 <script>
+
 	const body = document.getElementById('element');
 	const lightButton = document.getElementById('light-button');
 	const darkButton = document.getElementById('dark-button');
@@ -248,6 +249,7 @@ import externalLink from '../assets/icons/link-arrow.svg';
 		body.style.backgroundColor = 'rgba(38, 40, 45, 1)';
 		lightWrapper.style.opacity= '0';
 		darkWrapper.style.opacity= '1';
+		darkWrapper.style.zIndex= '1';
 		darkButton.classList.add('active');
 		lightButton.classList.remove('active');
 		currentTheme = 'dark';
@@ -258,6 +260,7 @@ import externalLink from '../assets/icons/link-arrow.svg';
 		body.style.backgroundColor = 'rgba(237, 244, 255, 1)'
 		darkWrapper.style.opacity= '0';
 		lightWrapper.style.opacity= '1';
+		darkWrapper.style.zIndex= '-1';
 		lightButton.classList.add('active');
 		darkButton.classList.remove('active');
 		currentTheme = 'light';
@@ -270,16 +273,40 @@ import externalLink from '../assets/icons/link-arrow.svg';
 			body.style.backgroundColor = 'rgba(38, 40, 45, 1)';
 			lightWrapper.style.opacity= '0';
 			darkWrapper.style.opacity= '1';
+			darkWrapper.style.zIndex= '1';
 			darkButton.classList.add('active');
 			lightButton.classList.remove('active');
+			currentTheme = 'dark';
+			localStorage.setItem('theme', currentTheme);
 		}
 		else{
 			body.style.backgroundColor = 'rgba(237, 244, 255, 1)'
 			darkWrapper.style.opacity= '0';
 			lightWrapper.style.opacity= '1';
+			darkWrapper.style.zIndex= '-1';
 			lightButton.classList.add('active');
 			darkButton.classList.remove('active');
 		}
 	});
+
+	const separate = id => {
+		const element = document.getElementById(id),
+        text = element.innerText.split("");
+
+		element.innerText ="";
+
+		text.forEach( letter => {
+			const span = document.createElement("span");
+			span.className = "letter";
+			
+			span.innerText = letter;
+			
+			element.appendChild(span);
+		});
+	};
+
+	separate('hero-light');
+	separate('hero-dark');
+
 
 </script>

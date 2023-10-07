@@ -320,6 +320,15 @@ a{
     font-weight: 400;
 }
 
+.letter{
+    transition: all .5s ease;
+}
+
+.letter:hover{
+    font-size: 6rem;
+    line-height: 6.5rem;
+}
+
 // Scroll Bar
 /*width*/
 ::-webkit-scrollbar {

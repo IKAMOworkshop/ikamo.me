@@ -9,8 +9,8 @@ const posts = await getAllPosts();
 ---
 
 <div id="mode-switcher" class="mode-switcher" data-theme="light">
-	<button id="light-button" class="mode-button active">LIGHT</button>
-	<button id="dark-button" class="mode-button">DARK</button>
+	<button id="light-button" class="mode-button active">GRID</button>
+	<button id="dark-button" class="mode-button">LIST</button>
 </div>
 
 <Layout title="IKAMOlog">
@@ -33,7 +33,7 @@ const posts = await getAllPosts();
 				</div>
 			</div>
 
-			<h1 class="page-header hero-title midnight-text-color">Select moment.</h1>
+			<h1 id="heading-light" class="page-header hero-title midnight-text-color">Select moment.</h1>
 
 			<ul class="log-tiles">
 				{posts.map(post => (
@@ -62,7 +62,7 @@ const posts = await getAllPosts();
 				</div>
 			</div>
 
-			<h1 class="page-header hero-title midnight-text-color">Select moment.</h1>
+			<h1 id="heading-dark" class="page-header hero-title midnight-text-color">Select moment.</h1>
 
 			<ul class="log-tiles-dark">
 				{posts.map(post => (
@@ -92,6 +92,7 @@ const posts = await getAllPosts();
 		body.style.backgroundColor = 'rgba(38, 40, 45, 1)';
 		lightWrapper.style.opacity= '0';
 		darkWrapper.style.opacity= '1';
+		darkWrapper.style.zIndex= '1';
 		darkButton.classList.add('active');
 		lightButton.classList.remove('active');
 		currentTheme = 'dark';
@@ -102,6 +103,7 @@ const posts = await getAllPosts();
 		body.style.backgroundColor = 'rgba(237, 244, 255, 1)'
 		darkWrapper.style.opacity= '0';
 		lightWrapper.style.opacity= '1';
+		darkWrapper.style.zIndex= '-1';
 		lightButton.classList.add('active');
 		darkButton.classList.remove('active');
 		currentTheme = 'light';
@@ -114,15 +116,39 @@ const posts = await getAllPosts();
 			body.style.backgroundColor = 'rgba(38, 40, 45, 1)';
 			lightWrapper.style.opacity= '0';
 			darkWrapper.style.opacity= '1';
+			darkWrapper.style.zIndex= '1';
 			darkButton.classList.add('active');
 			lightButton.classList.remove('active');
+			currentTheme = 'dark';
+			localStorage.setItem('theme', currentTheme);
 		}
 		else{
 			body.style.backgroundColor = 'rgba(237, 244, 255, 1)'
 			darkWrapper.style.opacity= '0';
 			lightWrapper.style.opacity= '1';
+			darkWrapper.style.zIndex= '-1';
 			lightButton.classList.add('active');
 			darkButton.classList.remove('active');
 		}
 	});
+
+	const separate = id => {
+		const element = document.getElementById(id),
+        text = element.innerText.split("");
+
+		element.innerText ="";
+
+		text.forEach( letter => {
+			const span = document.createElement("span");
+			span.className = "letter";
+			
+			span.innerText = letter;
+			
+			element.appendChild(span);
+		});
+	};
+
+	separate("heading-light");
+	separate("heading-dark");
+
 </script>
