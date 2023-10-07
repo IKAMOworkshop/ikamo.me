@@ -63,6 +63,18 @@
     display: flex;
     align-items: end;
     position: relative;
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+.log-tiles:has(.over:hover) .log-tile:not(.over:hover){
+    opacity: 0.1;
+    filter: blur(4px);
+}
+
+.log-tile:hover{
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 .log-label{

@@ -34,7 +34,7 @@ const posts = await getAllPosts();
 
 			<ul class="log-tiles">
 				{posts.map(post => (
-					<a href={`/logs/${post.slug.current}`} class="log-tile rounded-40">
+					<a href={`/logs/${post.slug.current}`} class="log-tile rounded-40 over">
 						<img src={urlForImage(post.thumbnailImage).url()} alt="" class="thumb-image-cover">
 						<div class="log-label body midnight-text-color light-gray-color rounded-full">{post.title}</div>
 					</a>
@@ -44,3 +44,7 @@ const posts = await getAllPosts();
 
 	</main>
 </Layout>
+
+<script>
+	
+</script>
