@@ -339,8 +339,7 @@ a{
 }
 
 .letter:hover{
-    font-size: 6rem;
-    line-height: 6.5rem;
+    filter: blur(10px);
 }
 
 // Scroll Bar

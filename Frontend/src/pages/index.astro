@@ -8,11 +8,6 @@ import { urlForImage} from '../sanity/urlForImage.js';
 const posts = await getAllPosts();
 ---
 
-<div id="mode-switcher" class="mode-switcher" data-theme="light">
-	<button id="light-button" class="mode-button active">GRID</button>
-	<button id="dark-button" class="mode-button">LIST</button>
-</div>
-
 <Layout title="IKAMOlog">
 	<main class="container">
 
@@ -79,59 +74,6 @@ const posts = await getAllPosts();
 </Layout>
 
 <script>
-	const body = document.getElementById('element');
-	const lightButton = document.getElementById('light-button');
-	const darkButton = document.getElementById('dark-button');
-	const lightWrapper = document.getElementById('light-mode');
-	const darkWrapper = document.getElementById('dark-mode');
-	const modeSwitcher = document.getElementById('mode-switcher');
-
-	let currentTheme = modeSwitcher.getAttribute('data-theme');
-
-
-	darkButton.addEventListener('click', () => {
-		body.style.backgroundColor = 'rgba(38, 40, 45, 1)';
-		lightWrapper.style.opacity= '0';
-		darkWrapper.style.opacity= '1';
-		darkWrapper.style.zIndex= '1';
-		darkButton.classList.add('active');
-		lightButton.classList.remove('active');
-		currentTheme = 'dark';
-		localStorage.setItem('theme', currentTheme);
-	});
-
-	lightButton.addEventListener('click', () => {
-		body.style.backgroundColor = 'rgba(237, 244, 255, 1)'
-		darkWrapper.style.opacity= '0';
-		lightWrapper.style.opacity= '1';
-		darkWrapper.style.zIndex= '-1';
-		lightButton.classList.add('active');
-		darkButton.classList.remove('active');
-		currentTheme = 'light';
-		localStorage.setItem('theme', currentTheme);
-	});
-
-	window.addEventListener('DOMContentLoaded', () => {
-		const localTheme = localStorage.getItem('theme');
-		if (localTheme === 'dark'){
-			body.style.backgroundColor = 'rgba(38, 40, 45, 1)';
-			lightWrapper.style.opacity= '0';
-			darkWrapper.style.opacity= '1';
-			darkWrapper.style.zIndex= '1';
-			darkButton.classList.add('active');
-			lightButton.classList.remove('active');
-			currentTheme = 'dark';
-			localStorage.setItem('theme', currentTheme);
-		}
-		else{
-			body.style.backgroundColor = 'rgba(237, 244, 255, 1)'
-			darkWrapper.style.opacity= '0';
-			lightWrapper.style.opacity= '1';
-			darkWrapper.style.zIndex= '-1';
-			lightButton.classList.add('active');
-			darkButton.classList.remove('active');
-		}
-	});
 
 	const separate = id => {
 		const element = document.getElementById(id),
