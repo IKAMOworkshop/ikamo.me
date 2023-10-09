@@ -13,3 +13,4 @@ This is a personal project of logging highlights from my life. At the moment, it
 - I'm still trying to see the best way to write CSS classes, but making a style sheet for color and typography and creating a set of classes for them, like Tailwind, makes the development experiences faster and the code easier to read.
 - Local storage and HTML custom attributes are handy when setting up light and dark themes and maintaining the states across pages.
 - When setting up a CMS structure using headless CMS platforms like Sanity, if there's an unknown amount of images, use the block text type instead of images, as the query will return an error of null if the fields are empty.
+- To manipulate the hover state style of children objects, we don't always need to rely on JavaScript, but simple .parent:hover > .child can be applied as a selector to modify the style.
