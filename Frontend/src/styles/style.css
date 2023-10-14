@@ -29,12 +29,13 @@ nav.dark-mode {
   height: 720px;
   position: absolute;
   z-index: -100;
-  top: -240px;
-  right: -240px;
+  top: -4%;
+  right: -12%;
   border-radius: 100%;
   border: 1px solid;
   border-color: rgb(167, 199, 255);
   z-index: -1;
+  transition: all 0.5s ease;
 }
 
 .back-button {
@@ -195,6 +196,14 @@ footer {
   transition: all 0.5s ease;
 }
 
+@media screen and (max-width: 1280px) {
+  .circle-accent {
+    width: 600px;
+    height: 600px;
+    top: -4%;
+    right: -16%;
+  }
+}
 @media screen and (max-width: 1024px) {
   nav.light-mode {
     padding: 36px 36px;
@@ -211,6 +220,12 @@ footer {
   .light-mode .open-menu {
     transform-origin: 70% 20%;
   }
+  .circle-accent {
+    width: 480px;
+    height: 480px;
+    top: -4%;
+    right: -16%;
+  }
 }
 @media screen and (max-width: 768px) {
   nav.light-mode {
@@ -224,6 +239,12 @@ footer {
   }
   .light-mode .menu-button-block {
     height: 48px;
+  }
+  .circle-accent {
+    width: 320px;
+    height: 320px;
+    top: -2%;
+    right: -16%;
   }
 }
 .nav-text {
