@@ -467,9 +467,8 @@ footer {
   opacity: 0.05;
 }
 
-.grad-portfolio {
-  height: 800px;
-  background-image: url(../assets/about/graduation-portfolio.jpg);
+.grad-portfolio, .three-js {
+  height: 720px;
   background-size: 110%;
   background-position: center;
   display: flex;
@@ -477,6 +476,10 @@ footer {
   justify-content: space-between;
   align-items: end;
   transition: all 1s ease;
+}
+
+.grad-portfolio {
+  background-image: url(../assets/about/graduation-portfolio.jpg);
 }
 
 .grad-portfolio:hover {
@@ -486,13 +489,6 @@ footer {
 .three-js {
   height: 800px;
   background-image: url(../assets/about/three-js.jpg);
-  background-size: 110%;
-  background-position: center;
-  display: flex;
-  padding: 40px;
-  justify-content: space-between;
-  align-items: end;
-  transition: all 1s ease;
 }
 
 .three-js:hover {
@@ -543,6 +539,53 @@ footer {
   text-align: left;
 }
 
+@media screen and (max-width: 1280px) {
+  .grad-portfolio, .three-js {
+    height: 400px;
+    padding: 32px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .about-header {
+    margin-bottom: 160px;
+  }
+  .about-hero-image {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .about-log-text-group {
+    flex-direction: row;
+  }
+  .grad-portfolio, .three-js {
+    height: 320px;
+    padding: 32px;
+  }
+  .project-label {
+    opacity: 1;
+  }
+  .project-link {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .grad-portfolio, .three-js {
+    padding: 16px;
+    height: 320px;
+    flex-direction: column;
+    align-items: start;
+  }
+  .project-label {
+    padding: 4px 8px;
+    margin-right: 8px;
+  }
+  .project-links-container {
+    gap: 8px;
+  }
+  .project-link {
+    padding: 0px;
+  }
+}
 .log-container {
   padding: 0px 60px;
 }
@@ -938,6 +981,7 @@ body .transition {
   .hero-title {
     font-size: 10rem;
     line-height: 8rem;
+    width: 50%;
   }
   .project-list-title {
     font-size: 6.5rem;
@@ -945,6 +989,30 @@ body .transition {
   .thumb-image-hover {
     width: 400px;
     height: 500px;
+  }
+  .col-system, .inner-col-system {
+    gap: 24px;
+  }
+  .inner-col-system {
+    margin-bottom: 24px;
+  }
+  .hero-body {
+    font-size: 8rem;
+    line-height: 8rem;
+    width: 100%;
+  }
+  .about-body {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-body {
+    font-size: 2rem;
+  }
+  .mb-36 {
+    margin-bottom: 24px;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -967,9 +1035,38 @@ body .transition {
   .body {
     font-size: 0.8rem;
   }
+  .hero-body {
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+  .about-body {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+  .section-container {
+    margin-bottom: 100px;
+  }
+  .col-system {
+    margin-bottom: 100px;
+  }
+  .col-50 {
+    width: 60%;
+  }
+  .col-60 {
+    width: 100%;
+  }
+  .col-70 {
+    width: 100%;
+  }
+  .image-cover {
+    height: 400px;
+  }
   .thumb-image-hover {
     left: 30%;
     top: -100%;
+  }
+  .mb-36 {
+    margin-bottom: 16px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -978,6 +1075,19 @@ body .transition {
   }
   .dark-mode {
     padding: 0px 24px;
+  }
+  .hero-body {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .col-system, .inner-col-system {
+    flex-direction: column;
+  }
+  .col-50 {
+    width: 100%;
+  }
+  .col-30 {
+    width: 100%;
   }
   .hero-title {
     font-size: 5rem;
@@ -996,5 +1106,8 @@ body .transition {
   }
   .rounded-40 {
     border-radius: 20px;
+  }
+  .mb-36 {
+    margin-bottom: 8px;
   }
 }/*# sourceMappingURL=style.css.map */
