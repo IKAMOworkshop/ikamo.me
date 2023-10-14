@@ -115,7 +115,7 @@ import externalLink from '../assets/icons/link-arrow.svg';
 
 			<div class="section-container">
 				<h2 class="about-body midnight-text-color mb-36">Want to have a chat?</h2>
-				<button class="hero-body midnight-text-color hero-text-button">Feel free to reach out anytime.</button>
+				<button id="about-email" class="hero-body midnight-text-color hero-text-button">Feel free to reach out anytime.</button>
 			</div>
 		</div>
 
@@ -248,5 +248,27 @@ import externalLink from '../assets/icons/link-arrow.svg';
 	separate('hero-light');
 	separate('hero-dark');
 
+	const emailButton = document.getElementById('about-email');
+    const successMessage = document.getElementById('copied-success')
+    const failedMessage = document.getElementById('copy-failed');
 
+        function copyEmail() {
+            navigator.clipboard.writeText("changjeremy0226@gmail.com").then(() => {
+                console.log('Content copied to clipboard');
+                successMessage.style.opacity = "1";
+                setTimeout(() => {
+                    successMessage.style.opacity = "0";
+                }, 5000);
+                /* Resolved - text copied to clipboard successfully */
+            },() => {
+                console.error('Failed to copy');
+                failedMessage.style.opacity = "1";
+                setTimeout(() => {
+                    failedMessage.style.opacity = "0";
+                }, 5000);
+                /* Rejected - text failed to copy to the clipboard */
+            });
+        }
+
+        emailButton.addEventListener('click', copyEmail);
 </script>

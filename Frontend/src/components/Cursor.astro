@@ -4,9 +4,13 @@
 
 <div class="cursor-container">
     <div id="cursor" class="cursor"></div>
+    <p id="copied-success" class="email-message">Copied to clipboard!</p>
+    <p id="copy-failed" class="email-message">Oops, failed to copy!</p>
 </div>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+    
     .cursor-container{
         position: fixed;
         z-index: 2000;
@@ -16,6 +20,18 @@
         justify-content: center;
         align-items: center;
         pointer-events: none;
+    }
+
+    .email-message{
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: .8rem;
+        position: absolute;
+        margin: 16px 0px 0px 16px;
+        color:rgba(167, 199, 255, 1);
+        width: 80px;
+        opacity: 0;
+        transition: all .5s ease;
     }
 
     .cursor{
@@ -35,12 +51,24 @@
 
 <script>
     const cursor = document.getElementById('cursor');
+    const successMessage = document.getElementById('copied-success')
+    const failedMessage = document.getElementById('copy-failed');
 
     document.addEventListener("mousemove", (event) => {
         const mousePosX = event.clientX;
         const mousePosY = event.clientY;
         
     cursor.animate({
+        left: mousePosX +'px',
+        top: mousePosY + 'px'
+    }, {duration: 300, fill: "forwards"});
+
+    successMessage.animate({
+        left: mousePosX +'px',
+        top: mousePosY + 'px'
+    }, {duration: 300, fill: "forwards"});
+
+    failedMessage.animate({
         left: mousePosX +'px',
         top: mousePosY + 'px'
     }, {duration: 300, fill: "forwards"});
