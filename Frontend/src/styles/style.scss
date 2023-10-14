@@ -401,6 +401,16 @@ body .transition {display: block}
     .mb-36{
         margin-bottom: 24px;
     }
+    .project-title{
+        font-size: 1rem;
+    }
+    .project-description{
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    .body{
+        font-size: .8rem;
+    }
 }
 
 @media screen and (max-width: 1024px){
@@ -456,6 +466,10 @@ body .transition {display: block}
     .mb-36{
         margin-bottom: 16px;
     }
+    .project-description{
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -499,8 +513,7 @@ body .transition {display: block}
     .mb-36{
         margin-bottom: 8px;
     }
-}
-
-@media screen and (max-width: 420px){
-
+    .image{
+        border-radius: 20px;
+    }
 }
