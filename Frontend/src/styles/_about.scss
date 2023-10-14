@@ -66,7 +66,18 @@
 
 .project-label{
     padding: 4px 16px;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
+
+.grad-portfolio:hover > .project-label{
+    opacity: 1;
+}
+
+.three-js:hover > .project-label{
+    opacity: 1;
+}
+
 
 .project-links-container{
     display: flex;
@@ -78,7 +89,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .5s ease;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.grad-portfolio:hover > .project-links-container > .project-link{
+    opacity: 1;
+}
+
+.three-js:hover > .project-links-container > .project-link{
+    opacity: 1;
 }
 
 .project-link:hover{

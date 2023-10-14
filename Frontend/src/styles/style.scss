@@ -283,7 +283,7 @@ a{
 }
 
 .project-list-title{
-    font-size: 8rem;
+    font-size: 7.5rem;
     font-weight: 300;
 }
 
@@ -362,3 +362,75 @@ a{
 body .transition {display: block}
 .w-editor .transition {display: none;}
 .no-scroll-transition {overflow: hidden; position: relative;}
+
+// Responsive
+@media screen and (max-width: 1280px) {
+    .hero-title{
+        font-size: 10rem;
+        line-height: 8rem;
+    }
+    .project-list-title{
+        font-size: 6.5rem;
+    }
+    .thumb-image-hover{
+        width: 400px;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .light-mode{
+        padding: 0px 36px;
+    }
+    .dark-mode{
+        padding: 0px 36px;
+    }
+    .hero-title{
+        font-size: 8rem;
+        line-height: 7rem;
+    }
+    .project-list-title{
+        font-size: 5.5rem;
+    }
+    .body-title{
+        font-size: .8rem;
+    }
+    .body{
+        font-size: .8rem;
+    }
+    .thumb-image-hover{
+        left: 30%;
+        top: -100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .light-mode{
+        padding: 0px 24px;
+    }
+    .dark-mode{
+        padding: 0px 24px;
+    }
+    .hero-title{
+        font-size: 5rem;
+        line-height: 5rem;
+        width: 50%;
+    }
+    .project-list-title{
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+    .thumb-image-hover{
+        width: 300px;
+        height: 400px;
+        left: 16%;
+        top: -50%;
+    }
+    .rounded-40{
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-width: 420px){
+
+}

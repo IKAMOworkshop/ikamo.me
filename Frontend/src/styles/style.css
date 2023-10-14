@@ -8,6 +8,7 @@ nav.light-mode {
   top: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 1000;
 }
 
@@ -194,9 +195,40 @@ footer {
   transition: all 0.5s ease;
 }
 
+@media screen and (max-width: 1024px) {
+  nav.light-mode {
+    padding: 36px 36px;
+  }
+  nav.dark-mode {
+    padding: 36px 36px;
+  }
+  .light-mode .social-links {
+    gap: 8px;
+  }
+  .light-mode .menu-button-block {
+    height: 60px;
+  }
+  .light-mode .open-menu {
+    transform-origin: 70% 20%;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav.light-mode {
+    padding: 24px 24px;
+  }
+  nav.dark-mode {
+    padding: 24px 24px;
+  }
+  .light-mode .social-links {
+    gap: 8px;
+  }
+  .light-mode .menu-button-block {
+    height: 48px;
+  }
+}
 .nav-text {
   width: 100%;
-  margin: 60px 0px 96px 0px;
+  margin: 52px 0px 96px 0px;
   display: flex;
 }
 
@@ -300,7 +332,6 @@ footer {
 }
 
 .log-tile-dark:hover {
-  opacity: 1;
   transform: translateX(72px);
 }
 
@@ -314,6 +345,96 @@ footer {
   transform: scale(1);
 }
 
+@media screen and (max-width: 1280px) {
+  .nav-text-blocker {
+    width: 40%;
+  }
+  .nav-text-group {
+    width: 60;
+    gap: 80px;
+  }
+  .nav-text-title {
+    width: auto;
+  }
+  .nav-log-logo {
+    width: 300px;
+  }
+  .log-tiles {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .log-tile {
+    height: 360px;
+  }
+  .log-label {
+    margin: 32px;
+  }
+  .log-tile-dark {
+    padding: 32px 0px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .nav-text-blocker {
+    width: 30%;
+  }
+  .nav-log-logo {
+    width: 200px;
+  }
+  .log-tiles {
+    gap: 16px;
+  }
+  .log-tile-dark:hover {
+    transform: translateX(48px);
+  }
+  .log-label {
+    margin: 24px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-text {
+    opacity: 0;
+    margin: 52px 0px 36px 0px;
+  }
+  .log-tiles {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .page-header {
+    margin-bottom: 48px;
+  }
+  .log-tile {
+    width: 100%;
+    height: 240px;
+  }
+  .log-tile-dark {
+    padding: 24px 0px;
+  }
+  .log-tile-dark:hover {
+    transform: translateX(24px);
+  }
+  .log-label {
+    padding: 4px 8px;
+    margin: 16px;
+  }
+  .log-tile-dark {
+    padding: 24px 0px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .log-tiles {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+  .log-tile {
+    height: 200px;
+  }
+  .log-tile-dark {
+    padding: 56px 0px;
+  }
+  .log-label {
+    opacity: 1;
+  }
+}
 .about-header {
   padding: 240px 0px 0px 0px;
   margin-bottom: 200px;
@@ -380,6 +501,16 @@ footer {
 
 .project-label {
   padding: 4px 16px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.grad-portfolio:hover > .project-label {
+  opacity: 1;
+}
+
+.three-js:hover > .project-label {
+  opacity: 1;
 }
 
 .project-links-container {
@@ -392,7 +523,16 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.5s ease;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.grad-portfolio:hover > .project-links-container > .project-link {
+  opacity: 1;
+}
+
+.three-js:hover > .project-links-container > .project-link {
+  opacity: 1;
 }
 
 .project-link:hover {
@@ -706,7 +846,7 @@ a {
 }
 
 .project-list-title {
-  font-size: 8rem;
+  font-size: 7.5rem;
   font-weight: 300;
 }
 
@@ -792,4 +932,69 @@ body .transition {
 .no-scroll-transition {
   overflow: hidden;
   position: relative;
+}
+
+@media screen and (max-width: 1280px) {
+  .hero-title {
+    font-size: 10rem;
+    line-height: 8rem;
+  }
+  .project-list-title {
+    font-size: 6.5rem;
+  }
+  .thumb-image-hover {
+    width: 400px;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .light-mode {
+    padding: 0px 36px;
+  }
+  .dark-mode {
+    padding: 0px 36px;
+  }
+  .hero-title {
+    font-size: 8rem;
+    line-height: 7rem;
+  }
+  .project-list-title {
+    font-size: 5.5rem;
+  }
+  .body-title {
+    font-size: 0.8rem;
+  }
+  .body {
+    font-size: 0.8rem;
+  }
+  .thumb-image-hover {
+    left: 30%;
+    top: -100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .light-mode {
+    padding: 0px 24px;
+  }
+  .dark-mode {
+    padding: 0px 24px;
+  }
+  .hero-title {
+    font-size: 5rem;
+    line-height: 5rem;
+    width: 50%;
+  }
+  .project-list-title {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+  .thumb-image-hover {
+    width: 300px;
+    height: 400px;
+    left: 16%;
+    top: -50%;
+  }
+  .rounded-40 {
+    border-radius: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */

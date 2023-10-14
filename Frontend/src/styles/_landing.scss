@@ -1,6 +1,6 @@
 .nav-text{
     width: 100%;
-    margin: 60px 0px 96px 0px;
+    margin: 52px 0px 96px 0px;
     display: flex;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .page-header{
-        margin-bottom: 100px;
+    margin-bottom: 100px;
 }
 
 .log-tiles{
@@ -104,7 +104,6 @@
 }
 
 .log-tile-dark:hover{
-    opacity: 1;
     transform: translateX(72px);
 }
 
@@ -116,4 +115,100 @@
 .log-tile-dark:hover > .thumb-image-hover{
     opacity: .5;
     transform: scale(1);
+}
+
+// Responsive
+// Responsive
+@media screen and (max-width: 1280px) {
+    .nav-text-blocker{
+        width: 40%;
+    }
+    .nav-text-group{
+        width: 60;
+        gap: 80px;
+    }
+    .nav-text-title{
+        width: auto;
+    }
+    .nav-log-logo{
+        width: 300px;
+    }
+    .log-tiles{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    .log-tile{
+        height: 360px;
+    }
+    .log-label{
+        margin: 32px;
+    }
+    .log-tile-dark{
+        padding: 32px 0px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .nav-text-blocker{
+        width: 30%;
+    }
+    .nav-log-logo{
+        width: 200px;
+    }
+    .log-tiles{
+        gap: 16px;
+    }
+    .log-tile-dark:hover{
+        transform: translateX(48px);
+    }
+    .log-label{
+        margin: 24px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .nav-text{
+        opacity: 0;
+        margin: 52px 0px 36px 0px;
+    }
+    .log-tiles{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .page-header{
+        margin-bottom: 48px;
+    }
+    .log-tile{
+        width: 100%;
+        height: 240px;
+    }
+    .log-tile-dark{
+        padding: 24px 0px;
+    }
+    .log-tile-dark:hover{
+        transform: translateX(24px);
+    }
+    .log-label{
+        padding: 4px 8px;
+        margin: 16px;
+    }
+    .log-tile-dark{
+        padding: 24px 0px;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .log-tiles{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 16px;
+    }
+    .log-tile{
+        height: 200px;
+    }
+    .log-tile-dark{
+        padding: 56px 0px;
+    }
+    .log-label{
+        opacity: 1;
+    }
 }

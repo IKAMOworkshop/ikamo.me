@@ -7,6 +7,7 @@ nav.light-mode{
     top: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     z-index: 1000;
 }
 
@@ -206,4 +207,42 @@ footer{
     transform-origin: left;
     transform: scaleX(0);
     transition: all .5s ease;
+}
+
+// Responsive
+@media screen and (max-width: 1024px){
+    nav.light-mode{
+        padding: 36px 36px;
+    }
+    nav.dark-mode{
+        padding: 36px 36px;
+    }
+    .light-mode{
+        .social-links{
+            gap: 8px;
+        }
+        .menu-button-block{
+            height: 60px;
+        }    
+        .open-menu{
+            transform-origin: 70% 20%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    nav.light-mode{
+        padding: 24px 24px;
+    }
+    nav.dark-mode{
+        padding: 24px 24px;
+    }
+    .light-mode{
+        .social-links{
+            gap: 8px;
+        }
+        .menu-button-block{
+            height: 48px;
+        }    
+    }
 }
