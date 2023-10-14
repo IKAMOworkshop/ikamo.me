@@ -24,7 +24,7 @@ const { post } = Astro.props;
                             <div class="log-title-container">
                                 <h1 class="project-title midnight-text-color">{post.title}</h1>
                                 <p class="body accent-text-color">
-                                    {post.eventDate} | #{post.tag}
+                                    <span id="project-date">{post.eventDate} </span> | #{post.tag}
                                 </p>
                             </div>
                             <h2 class="project-description midnight-text-color">{post.description}</h2>
@@ -67,3 +67,15 @@ const { post } = Astro.props;
 	</main>
 
 </Layout>
+
+<script>
+    const getDate = document.getElementById('project-date').innerHTML;
+    const convertDate = new Date(getDate);
+
+    const dateFormatter = (date) => date.toLocaleDateString(undefined, {
+        month: 'short',
+        year: 'numeric'
+    });
+
+    document.getElementById('project-date').innerHTML = dateFormatter(convertDate);
+</script>
