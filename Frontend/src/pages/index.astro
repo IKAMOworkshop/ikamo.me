@@ -2,10 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import '../styles/style.css';
 
-import { getAllPosts } from '../sanity/api.js';
+import { getAllPosts, formatLogPost } from '../sanity/api.js';
 import { urlForImage} from '../sanity/urlForImage.js';
 
 const posts = await getAllPosts();
+
+const formattedLogs = formatLogPost(posts);
 ---
 
 <Layout
@@ -34,7 +36,7 @@ const posts = await getAllPosts();
 			<h1 id="heading-light" class="page-header hero-title midnight-text-color">Select moment.</h1>
 
 			<ul class="log-tiles">
-				{posts.map(post => (
+				{formattedLogs.map(post => (
 					<a href={`/logs/${post.slug.current}`} class="log-tile rounded-40 over">
 						<img src={urlForImage(post.thumbnailImage).url()} alt="" class="thumb-image-cover">
 						<div class="log-label body midnight-text-color light-gray-color rounded-full">{post.title}</div>
