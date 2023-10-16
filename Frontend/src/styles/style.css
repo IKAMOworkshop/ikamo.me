@@ -29,8 +29,8 @@ nav.dark-mode {
   height: 720px;
   position: absolute;
   z-index: -100;
-  top: -4%;
-  right: -12%;
+  top: -200px;
+  right: -200px;
   border-radius: 100%;
   border: 1px solid;
   border-color: rgb(167, 199, 255);
@@ -206,12 +206,33 @@ footer {
   transition: all 0.5s ease;
 }
 
+.not-found-container {
+  width: 100%;
+  padding: 240px 0px 0px 0px;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.not-found-description {
+  width: 400px;
+  margin: 24px 0px 100px 0px;
+}
+
+.not-found-button {
+  padding: 24px 36px;
+  border-radius: 20px;
+}
+
 @media screen and (max-width: 1280px) {
   .circle-accent {
     width: 600px;
     height: 600px;
-    top: -4%;
-    right: -16%;
+    top: -200px;
+    right: -200px;
   }
   .back-button {
     width: 320px;
@@ -244,8 +265,8 @@ footer {
   .circle-accent {
     width: 480px;
     height: 480px;
-    top: -4%;
-    right: -16%;
+    top: -200px;
+    right: -200px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -264,8 +285,8 @@ footer {
   .circle-accent {
     width: 320px;
     height: 320px;
-    top: -2%;
-    right: -16%;
+    top: -80px;
+    right: -80px;
   }
   .back-button {
     width: 200px;
