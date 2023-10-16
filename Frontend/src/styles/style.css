@@ -68,6 +68,10 @@ nav.dark-mode {
   background-color: rgb(167, 199, 255);
 }
 
+.back-arrow-fill {
+  fill: rgb(108, 118, 144);
+}
+
 .light-mode .nav-logo {
   transition: all 0.5s ease;
 }

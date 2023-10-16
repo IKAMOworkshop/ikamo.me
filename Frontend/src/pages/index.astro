@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import '../styles/style.css'
+import '../styles/style.css';
 
 import { getAllPosts } from '../sanity/api.js';
 import { urlForImage} from '../sanity/urlForImage.js';
@@ -8,7 +8,10 @@ import { urlForImage} from '../sanity/urlForImage.js';
 const posts = await getAllPosts();
 ---
 
-<Layout title="IKAMOlog">
+<Layout
+	title="IKAMOlog"
+	description='A place where Jeremy, a creative developer, document highlights from his life.'
+>
 	<main class="container">
 
 		<div id="light-mode" class="light-mode">
