@@ -240,6 +240,11 @@ footer{
 .not-found-button{
     padding: 24px 36px;
     border-radius: 20px;
+    transition: all .5s ease;
+}
+
+.not-found-button:hover{
+    transform: scale(1.1);
 }
 
 // Responsive

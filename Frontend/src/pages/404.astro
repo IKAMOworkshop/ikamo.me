@@ -15,9 +15,30 @@
     </div>
     <div class="dark-mode" id="dark-mode">
         <div class="not-found-container">
-            <h1 id="hero-light" class="hero-title primary-text-color">404</h1>
+            <h1 id="hero-dark" class="hero-title primary-text-color">404</h1>
             <p class="project-title midnight-text-color not-found-description">Oops, this is awkward, we can't find this page.</p>
             <a href="/" class="not-found-button primary-color light-gray-text-color body-title">Take me back!</a>
         </div>
     </div>
 </Layout>
+
+<script>
+    	const separate = id => {
+		const element = document.getElementById(id),
+        text = element.innerText.split("");
+
+		element.innerText ="";
+
+		text.forEach( letter => {
+			const span = document.createElement("span");
+			span.className = "letter";
+			
+			span.innerText = letter;
+			
+			element.appendChild(span);
+		});
+	};
+
+	separate("hero-light");
+	separate("hero-dark");
+</script>
