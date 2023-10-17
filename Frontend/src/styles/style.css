@@ -1117,6 +1117,39 @@ a {
   filter: blur(10px);
 }
 
+.content-hidden-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.5s ease;
+}
+
+.content-show-right {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.content-hidden-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.5s ease;
+}
+
+.content-show-left {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.footer-hidden {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s ease;
+}
+
+.footer-show {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
 /*width*/
 ::-webkit-scrollbar {
   width: 0px;

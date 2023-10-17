@@ -2,7 +2,7 @@
 
 ---
 
-<footer>
+<footer class="footer-hidden">
     <div class="footer-logo">
         <h1 class="footer-logo-title about-body">IKAMO</h1>
         <div class="logo-accent">
@@ -50,4 +50,21 @@
     aboutLink.addEventListener('mouseout', () => {
         aboutUnderline.style.transform = 'scaleX(0)';
     });
+
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('footer-show');
+        }
+		else{
+			entry.target.classList.remove('footer-show');
+		}
+    })
+	},
+	{
+		threshold: .2,
+	});
+
+	const hiddenElements = document.querySelectorAll(".footer-hidden");
+	hiddenElements.forEach((el) => observer.observe(el));
 </script>
