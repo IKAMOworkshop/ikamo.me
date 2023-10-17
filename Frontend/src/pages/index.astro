@@ -8,44 +8,45 @@ import { urlForImage} from '../sanity/urlForImage.js';
 const posts = await getAllPosts();
 
 const formattedLogs = formatLogPost(posts);
+
 ---
 
 <Layout
 	title="IKAMOlog"
 	description='A place where Jeremy, a creative developer, document highlights from his life.'
 >
-	<main class="container">
+<main class="container">
 
-		<div id="light-mode" class="light-mode">
-			<div class="nav-text">
-				<div class="nav-text-blocker"></div>
-				<div class="nav-text-group">
-					<p class="nav-text-title body-title midnight-text-color">A place to document and revisit all aspect of my life.</p>
-					<div class="nav-log-logo">
-						<p class="nav-text-title body-title">Personal log.</p>
-						<div class="nav-body-group">
-							<p class="midnight-text-color body">design</p>
-							<p class="midnight-text-color body">travel</p>
-							<p class="midnight-text-color body">workspace</p>
-							<p class="midnight-text-color body">milestone</p>
-						</div>
+	<div id="light-mode" class="light-mode">
+		<div class="nav-text">
+			<div class="nav-text-blocker"></div>
+			<div class="nav-text-group">
+				<p class="nav-text-title body-title midnight-text-color">A place to document and revisit all aspect of my life.</p>
+				<div class="nav-log-logo">
+					<p class="nav-text-title body-title">Personal log.</p>
+					<div class="nav-body-group">
+						<p class="midnight-text-color body">design</p>
+						<p class="midnight-text-color body">travel</p>
+						<p class="midnight-text-color body">workspace</p>
+						<p class="midnight-text-color body">milestone</p>
 					</div>
 				</div>
 			</div>
-
-			<h1 id="heading-light" class="page-header hero-title midnight-text-color">Select moment.</h1>
-
-			<ul class="log-tiles">
-				{formattedLogs.map(post => (
-					<a href={`/logs/${post.slug.current}`} class="log-tile rounded-40 over scroll-trigger">
-						<img src={urlForImage(post.thumbnailImage).url()} alt="" class="thumb-image-cover">
-						<div class="log-label body midnight-text-color light-gray-color rounded-full">{post.title}</div>
-					</a>
-				))}
-			</ul>
 		</div>
 
-		<div id="dark-mode" class="dark-mode">
+		<h1 id="heading-light" class="page-header hero-title midnight-text-color">Select moment.</h1>
+
+		<ul class="log-tiles">
+			{formattedLogs.map(post => (
+				<a href={`/logs/${post.slug.current}`} class="log-tile rounded-40 over scroll-trigger">
+					<img src={urlForImage(post.thumbnailImage).url()} alt="" class="thumb-image-cover">
+					<div class="log-label body midnight-text-color light-gray-color rounded-full">{post.title}</div>
+				</a>
+			))}
+		</ul>
+	</div>
+
+	<div id="dark-mode" class="dark-mode">
 			<div class="nav-text">
 				<div class="nav-text-blocker"></div>
 				<div class="nav-text-group">
@@ -75,11 +76,11 @@ const formattedLogs = formatLogPost(posts);
 			</ul>
 		</div>
 
-	</main>
+
+</main>
 </Layout>
 
 <script>
-
 	const separate = id => {
 		const element = document.getElementById(id),
         text = element.innerText.split("");

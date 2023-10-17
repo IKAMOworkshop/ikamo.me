@@ -2,7 +2,7 @@
 
 ---
 
-<div id="mode-switcher" class="mode-switcher" data-theme="light">
+<div id="mode-switcher" class="mode-switcher" data-theme="light" transition:persist>
 	<button id="light-button" class="mode-button active">LIGHT</button>
 	<button id="dark-button" class="mode-button">DARK</button>
 </div>
@@ -41,6 +41,28 @@
 	});
 
 	window.addEventListener('DOMContentLoaded', () => {
+		const localTheme = localStorage.getItem('theme');
+		if (localTheme === 'dark'){
+			body.style.backgroundColor = 'rgba(38, 40, 45, 1)';
+			lightWrapper.style.opacity= '0';
+			darkWrapper.style.opacity= '1';
+			darkWrapper.style.zIndex= '1';
+			darkButton.classList.add('active');
+			lightButton.classList.remove('active');
+			currentTheme = 'dark';
+			localStorage.setItem('theme', currentTheme);
+		}
+		else{
+			body.style.backgroundColor = 'rgba(237, 244, 255, 1)'
+			darkWrapper.style.opacity= '0';
+			lightWrapper.style.opacity= '1';
+			darkWrapper.style.zIndex= '-1';
+			lightButton.classList.add('active');
+			darkButton.classList.remove('active');
+		}
+	});
+	
+	document.addEventListener('astro:after-swap', () => {
 		const localTheme = localStorage.getItem('theme');
 		if (localTheme === 'dark'){
 			body.style.backgroundColor = 'rgba(38, 40, 45, 1)';

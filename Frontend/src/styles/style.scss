@@ -29,6 +29,34 @@ body{
     transition: background-color 0.5s ease;
 }
 
+.loader-logo{
+    width: 100px;
+    transform: scale(1.5) rotate(-10deg);
+    transition: all .5s ease;
+}
+
+.page-transition-container{
+    width: 100%;
+    height: 100vh;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 6001;
+    opacity: 1;
+    transition: all 1.5s ease;
+}
+.page-transition-container-accent{
+    width: 100%;
+    height: 100vh;
+    background-color: $accent;
+    position: fixed;
+    z-index: 6000;
+    opacity: 1;
+    transition: all 1.5s ease;
+}
+
 button{
     background: none;
 	color: inherit;
