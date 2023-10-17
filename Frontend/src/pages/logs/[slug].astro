@@ -81,4 +81,21 @@ const { post } = Astro.props;
     });
 
     document.getElementById('project-date').innerHTML = dateFormatter(convertDate);
+
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('content-show');
+        }
+		else{
+			entry.target.classList.remove('content-show');
+		}
+    })
+	},
+	{
+		threshold: .1,
+	});
+
+	const hiddenElements = document.querySelectorAll(".content-hidden");
+	hiddenElements.forEach((el) => observer.observe(el));
 </script>

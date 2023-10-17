@@ -1150,6 +1150,17 @@ a {
   transform: translateY(0px);
 }
 
+.content-hidden {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.5s ease;
+}
+
+.content-show {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
 /*width*/
 ::-webkit-scrollbar {
   width: 0px;
