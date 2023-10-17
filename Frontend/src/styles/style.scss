@@ -300,7 +300,7 @@ a{
     font-size: 14rem;
     font-weight: 700;
     line-height: 13rem;
-    width: 880px;
+    overflow: hidden;
 }
 
 .hero-body{
@@ -364,7 +364,9 @@ a{
 }
 
 .letter{
-    transition: all .5s ease;
+    transition: filter .5s ease;
+    display: inline-block;
+    transform: translateY(200px);
 }
 
 .letter:hover{

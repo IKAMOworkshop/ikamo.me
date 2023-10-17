@@ -34,7 +34,14 @@ const formattedLogs = formatLogPost(posts);
 			</div>
 		</div>
 
-		<h1 id="heading-light" class="page-header hero-title midnight-text-color">Select moment.</h1>
+		<div class="page-header">
+			<div>
+				<h1 id="heading-light-one" class="hero-title midnight-text-color">Select</h1>
+			</div>
+			<div>
+				<h1 id="heading-light-two" class="hero-title midnight-text-color">moment.</h1>
+			</div>
+		</div>
 
 		<ul class="log-tiles">
 			{formattedLogs.map(post => (
@@ -63,7 +70,14 @@ const formattedLogs = formatLogPost(posts);
 				</div>
 			</div>
 
-			<h1 id="heading-dark" class="page-header hero-title midnight-text-color">Select moment.</h1>
+			<div class="header-container page-header">
+				<div>
+					<h1 id="heading-dark-one" class="hero-title midnight-text-color">Select</h1>
+				</div>
+				<div>
+					<h1 id="heading-dark-two" class="hero-title midnight-text-color">moments</h1>
+				</div>
+			</div>
 
 			<ul class="log-tiles-dark">
 				{posts.map(post => (
@@ -97,7 +111,39 @@ const formattedLogs = formatLogPost(posts);
 		});
 	};
 
-	separate("heading-light");
-	separate("heading-dark");
+	separate("heading-light-one");
+	separate("heading-light-two");
+	separate("heading-dark-one");
+	separate("heading-dark-two");
 
+	import { gsap, Power2 } from 'gsap';
+	const tl = gsap.timeline();
+	tl.to('.hero-title > .letter:nth-child(1)', 0.5, {
+		y: 0,
+		delay: .8,
+	})
+	.to('.hero-title > .letter:nth-child(2)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(3)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(4)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(5)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(6)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(7)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
 </script>
