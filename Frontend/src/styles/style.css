@@ -208,13 +208,16 @@ footer {
 
 .not-found-container {
   width: 100%;
-  padding: 240px 0px 0px 0px;
-  margin-bottom: 200px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.not-found-title {
+  width: 100%;
 }
 
 .not-found-description {
@@ -250,6 +253,9 @@ footer {
     height: 160px;
     transform: translate(80px, 80px);
   }
+  .not-found-description {
+    width: 240px;
+  }
 }
 @media screen and (max-width: 1024px) {
   nav.light-mode {
@@ -272,6 +278,15 @@ footer {
     height: 480px;
     top: -200px;
     right: -200px;
+  }
+  footer {
+    padding: 36px;
+  }
+  .contact-container {
+    gap: 0px;
+  }
+  .footer-link {
+    gap: 0px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -307,6 +322,9 @@ footer {
     width: 100px;
     height: 100px;
     transform: translate(60px, 60px);
+  }
+  footer {
+    padding: 24px;
   }
 }
 .nav-text {
@@ -1024,7 +1042,7 @@ a {
   background-color: rgb(38, 40, 45);
 }
 
-.hero-title {
+.hero-title, .not-found-title {
   font-size: 14rem;
   font-weight: 700;
   line-height: 13rem;
@@ -1072,6 +1090,7 @@ a {
 
 .project-title {
   font-size: 1.5rem;
+  line-height: 1.8rem;
   font-weight: 700;
 }
 
@@ -1133,6 +1152,10 @@ body .transition {
     line-height: 8rem;
     width: 50%;
   }
+  .not-found-title {
+    font-size: 10rem;
+    line-height: 8rem;
+  }
   .project-list-title {
     font-size: 6.5rem;
   }
@@ -1166,6 +1189,7 @@ body .transition {
   }
   .project-title {
     font-size: 1rem;
+    line-height: 1.5rem;
   }
   .project-description {
     font-size: 2rem;
@@ -1186,6 +1210,10 @@ body .transition {
     font-size: 8rem;
     line-height: 7rem;
   }
+  .not-found-title {
+    font-size: 8rem;
+    line-height: 7rem;
+  }
   .project-list-title {
     font-size: 5.5rem;
   }
@@ -1200,6 +1228,10 @@ body .transition {
     line-height: 6rem;
   }
   .about-body {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+  .about-body-light {
     font-size: 1.5rem;
     line-height: 1.8rem;
   }
@@ -1258,6 +1290,10 @@ body .transition {
     line-height: 5rem;
     width: 50%;
   }
+  .not-found-title {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
   .project-list-title {
     font-size: 3.5rem;
     line-height: 3.5rem;
@@ -1283,5 +1319,11 @@ body .transition {
   .mode-button {
     width: 80px;
     height: 36px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .about-body-light {
+    font-size: 1rem;
+    line-height: 1.2rem;
   }
 }/*# sourceMappingURL=style.css.map */

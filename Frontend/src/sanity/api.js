@@ -19,6 +19,5 @@ export function formatLogPost(posts, {
             return dateB - dateA;
         });
     };
-    console.log(posts);
 	return posts;
 };

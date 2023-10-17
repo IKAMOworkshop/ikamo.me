@@ -223,13 +223,16 @@ footer{
 // 404 Styling
 .not-found-container{
     width: 100%;
-    padding: 240px 0px 0px 0px;
-    margin-bottom: 200px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.not-found-title{
+    width: 100%;
 }
 
 .not-found-description{
@@ -266,6 +269,9 @@ footer{
         height: 160px;
         transform: translate(80px, 80px);
     }
+    .not-found-description{
+        width: 240px;
+    }
 }
 @media screen and (max-width: 1024px){
     nav.light-mode{
@@ -290,6 +296,15 @@ footer{
         height: 480px;
         top: -200px;
         right: -200px;
+    }
+    footer{
+        padding: 36px;
+    }
+    .contact-container{
+        gap: 0px;
+    }
+    .footer-link{
+        gap: 0px;
     }
 }
 
@@ -328,5 +343,8 @@ footer{
         width: 100px;
         height: 100px;
         transform: translate(60px, 60px);
+    }
+    footer{
+        padding: 24px;
     }
 }
