@@ -45,7 +45,7 @@ const formattedLogs = formatLogPost(posts);
 
 		<ul class="log-tiles log-tiles-animate">
 			{formattedLogs.map(post => (
-				<a href={`/logs/${post.slug.current}`} class="log-tile rounded-40 over scroll-trigger">
+				<a href={`/logs/${post.slug.current}`} class="log-tile rounded-40 over scroll-trigger inner-links">
 					<img src={urlForImage(post.thumbnailImage).url()} alt="" class="thumb-image-cover">
 					<div class="log-label body midnight-text-color light-gray-color rounded-full">{post.title}</div>
 				</a>
@@ -81,7 +81,7 @@ const formattedLogs = formatLogPost(posts);
 
 			<ul class="log-tiles-dark log-tiles-animate">
 				{posts.map(post => (
-					<a href={`/logs/${post.slug.current}`} class="log-tile-dark over scroll-trigger">
+					<a href={`/logs/${post.slug.current}`} class="log-tile-dark over scroll-trigger inner-links">
 						<h1 class="midnight-text-color project-list-title">{post.title}</h1>
 						<img src={urlForImage(post.thumbnailImage).url()} alt="" class="thumb-image-hover rounded-40">
 					</a>

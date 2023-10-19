@@ -31,7 +31,6 @@ body{
 
 .loader-logo{
     width: 100px;
-    transform: scale(1.5) rotate(-10deg);
     transition: all .5s ease;
 }
 
@@ -390,6 +389,7 @@ a{
     transition: filter .5s ease;
     transform: translateY(200px);
 }
+
 
 .letter:hover{
     filter: blur(10px);

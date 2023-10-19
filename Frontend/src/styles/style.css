@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
-nav.light-mode {
+.nav.light-mode {
   width: 100%;
   min-width: 100%;
   padding: 44px 60px;
@@ -9,18 +9,6 @@ nav.light-mode {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
-}
-
-nav.dark-mode {
-  width: 100%;
-  min-width: 100%;
-  padding: 44px 60px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
   z-index: 1000;
 }
 
@@ -840,7 +828,6 @@ body {
 
 .loader-logo {
   width: 100px;
-  transform: scale(1.5) rotate(-10deg);
   transition: all 0.5s ease;
 }
 

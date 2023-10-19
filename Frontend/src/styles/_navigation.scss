@@ -1,4 +1,4 @@
-nav.light-mode{
+.nav.light-mode{
     width: 100%;
     min-width:100%;
     padding: 44px 60px;
@@ -8,18 +8,6 @@ nav.light-mode{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
-}
-
-nav.dark-mode{
-    width: 100%;
-    min-width:100%;
-    padding: 44px 60px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
     z-index: 1000;
 }
 

@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Cursor from '../components/Cursor.astro';
 import ThemeSwitch from '../components/themeSwitch.astro';
-import loaderImage from '../assets/icons/loader-logo.svg';
 
 interface Props {
 	title: string;
@@ -41,10 +40,6 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="container-body">
-		<div id="page-transition" class="page-transition-container">
-			<img id="loader-image" src={loaderImage.src} alt="" class="loader-logo">
-		</div>
-		<div id="page-transition-accent" class="page-transition-container-accent"></div>
 		<Navbar />
 		<Cursor />
 		<ThemeSwitch />
@@ -61,19 +56,5 @@ const { title, description } = Astro.props;
 
 	luxy.init({
 		wrapper: '#element',
-	});
-
-	const loaderImage = document.getElementById('loader-image');
-	const transitionContainer = document.getElementById('page-transition');
-	const transitionContainerAccent = document.getElementById('page-transition-accent');
-
-	window.addEventListener("DOMContentLoaded", () =>{
-		loaderImage.style.transform = "scale(1) rotate(0deg)";
-		setTimeout(() => {
-			transitionContainer.style.transform = "translateY(-100%)";
-		}, 500);
-		setTimeout(() => {
-			transitionContainerAccent.style.transform = "translateY(-100%)";
-		}, 560);
 	});
 </script>

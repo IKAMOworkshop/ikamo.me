@@ -2,9 +2,15 @@
 import mailIcon from '../assets/icons/Mail.svg';
 import githubIcon from '../assets/icons/Github.svg';
 import linkedinIcon from '../assets/icons/Linkedin.svg';
+import loaderImage from '../assets/icons/loader-logo.svg';
 ---
 
-<nav class="light-mode">
+<div id="page-transition" class="page-transition-container">
+    <img id="loader-image" src={loaderImage.src} alt="" class="loader-logo">
+</div>
+<div id="page-transition-accent" class="page-transition-container-accent"></div>
+
+<div class="light-mode nav">
     <div class="blocker"></div>
     <div class="nav-menu">
         <button id="menu-button" class="nav-menu-button primary-color">
@@ -31,7 +37,7 @@ import linkedinIcon from '../assets/icons/Linkedin.svg';
             </div>
         </div>
     </div>
-</nav>
+</div>
 
 <script>
     const menuButton = document.getElementById('menu-button');
@@ -83,4 +89,16 @@ import linkedinIcon from '../assets/icons/Linkedin.svg';
     aboutLink.addEventListener('mouseout', () =>{
         aboutUnderline.style.transform = 'scaleX(0)';
     });
+
+    const transitionContainer = document.getElementById('page-transition');
+	const transitionContainerAccent = document.getElementById('page-transition-accent');
+
+	window.addEventListener("DOMContentLoaded", () =>{
+		setTimeout(() => {
+			transitionContainer.style.transform = "translateY(-100%)";
+		}, 500);
+		setTimeout(() => {
+			transitionContainerAccent.style.transform = "translateY(-100%)";
+		}, 560);
+	});
 </script>

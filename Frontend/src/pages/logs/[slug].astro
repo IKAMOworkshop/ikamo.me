@@ -105,7 +105,7 @@ const { post } = Astro.props;
 	const hiddenElements = document.querySelectorAll(".content-hidden");
 	hiddenElements.forEach((el) => observer.observe(el));
 
-    import { gsap } from 'gsap';
+    import { gsap, Power2 } from 'gsap';
 	const tl = gsap.timeline();
 
 	tl.to('.log-text-animate', 0.5, {
@@ -120,12 +120,11 @@ const { post } = Astro.props;
         y: 0,
         delay: -.45,
     })
-    .fromTo('.thumbnail-image', 0.5, {
-        opacity: 0,
-        y: 40,
+    .fromTo('.thumbnail-image', 1, {
+        clipPath: "polygon(0 0, 100% 0, 100% 0, 0% 0)"
     },{
-        opacity: 1,
-        y: 0,
-        delay: -.45,
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+        ease: Power2.easeOut,
+        delay: -.45
     })
 </script>
