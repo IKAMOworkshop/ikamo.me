@@ -469,7 +469,7 @@ body .transition {display: block}
     .hero-title{
         font-size: 10rem;
         line-height: 8rem;
-        width: 50%;
+        width: 80%;
     }
     .not-found-title{
         font-size: 10rem;
@@ -587,6 +587,15 @@ body .transition {display: block}
 }
 
 @media screen and (max-width: 768px){
+    body{
+        cursor: default;
+    }
+    a{
+        cursor: pointer;
+    }
+    button{
+        cursor: pointer;
+    }
     .light-mode{
         padding: 0px 24px;
     }
@@ -609,7 +618,7 @@ body .transition {display: block}
     .hero-title{
         font-size: 5rem;
         line-height: 5rem;
-        width: 50%;
+        width: 100%;
     }
     .not-found-title{
         font-size: 5rem;
@@ -647,5 +656,10 @@ body .transition {display: block}
     .about-body-light{
         font-size: 1rem;
         line-height: 1.2rem;
+    }
+    .hero-title{
+        font-size: 4rem;
+        line-height: 4rem;
+        width: 100%;
     }
 }

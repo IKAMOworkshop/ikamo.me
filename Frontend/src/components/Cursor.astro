@@ -39,13 +39,19 @@
         left: 50%;
         top: 50%;
         translate: -50% -50%;
-        min-width: 24px;
-        max-width: 24px;
-        min-height: 24px;
-        max-height: 24px;
+        min-width: 8px;
+        max-width: 8px;
+        min-height: 8px;
+        max-height: 8px;
         border-radius: 100%;
         background-color: rgba(58, 130, 255, 1);
         transition: all .4s;
+    }
+
+    @media screen and (max-width: 768px){
+        .cursor{
+            display: none;
+        }
     }
 </style>
 
@@ -80,29 +86,25 @@
 
     for (var i = 0 ; i < allButton.length ; i++){
         allButton[i].addEventListener("mouseover", function(){
-            cursor.style.transform = "scale(.3)";
-            cursor.style.backgroundColor = 'rgba(38, 40, 45, 1)';
+            cursor.style.transform = "scale(4)";
         });
     };
 
     for (var i = 0 ; i < allButton.length ; i++){
         allButton[i].addEventListener("mouseout", function(){
             cursor.style.transform = "scale(1)";
-            cursor.style.backgroundColor = 'rgba(58, 130, 255, 1)';
         });
     };
 
     for (var i = 0 ; i < allHyperLink.length ; i++){
         allHyperLink[i].addEventListener("mouseover", function(){
-            cursor.style.transform = "scale(.3)";
-            cursor.style.backgroundColor = 'rgba(38, 40, 45, 1)';
+            cursor.style.transform = "scale(4)";
         })
     };
 
     for (var i = 1 ; i < allHyperLink.length ; i++){
         allHyperLink[i].addEventListener("mouseout", function(){
             cursor.style.transform = "scale(1)";
-            cursor.style.backgroundColor = 'rgba(58, 130, 255, 1)';
         })
     };
 
