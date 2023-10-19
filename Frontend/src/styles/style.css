@@ -338,6 +338,9 @@ footer {
 
 .nav-body-group {
   padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .nav-body-group > .midnight-text-color:nth-child(1) {

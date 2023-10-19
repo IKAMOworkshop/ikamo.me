@@ -55,14 +55,20 @@ const { post } = Astro.props;
                     <div class="log-text-containter">
                         <div class="log-detail-container">
                             <div class="log-title-container">
-                                <h1 class="project-title midnight-text-color">{post.title}</h1>
-                                <p class="body accent-text-color">
-                                    {post.eventDate} | #{post.tag}
+                                <h1 id="project-title" class="project-title midnight-text-color">
+                                    <span class="log-text-animate">{post.title}</span>
+                                </h1>
+                                <p class="body accent-text-color overflow-hidden">
+                                    <span class="log-text-animate">
+                                        <span id="project-date">{post.eventDate} </span> | #{post.tag}
+                                    </span>
                                 </p>
                             </div>
-                            <h2 class="project-description midnight-text-color">{post.description}</h2>
+                            <h2 id="project-description" class="project-description midnight-text-color">{post.description}</h2>
                         </div>
-                        <p class="body accent-text-color">{post.logEmoji}</p>
+                        <p class="body accent-text-color overflow-hidden">
+                            <span class="log-text-animate">{post.logEmoji}</span>
+                        </p>
                     </div>
                 </div>
                 <div class="col-50 thumbnail-image"><img src={urlForImage(post.thumbnailImage).url()} alt="" class="image-cover"></div>
