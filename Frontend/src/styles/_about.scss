@@ -105,6 +105,11 @@
     text-align: left;
 }
 
+.about-top-animate{
+    transform: translateY(200px);
+    opacity: 0;
+}
+
 // Responsive
 @media screen and (max-width: 1280px){
     .grad-portfolio, .three-js{

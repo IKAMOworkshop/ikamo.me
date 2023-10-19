@@ -18,10 +18,17 @@ import externalLink from '../assets/icons/link-arrow.svg';
 
 		<div id="light-mode" class="light-mode">
 			<div class="about-header">
-				<h1 id="hero-light" class="hero-title midnight-text-color">Personal log.</h1>
+				<div class="page-header">
+					<div>
+						<h1 id="heading-light-one" class="hero-title midnight-text-color">Personal</h1>
+					</div>
+					<div>
+						<h1 id="heading-light-two" class="hero-title midnight-text-color">archive.</h1>
+					</div>
+				</div>
 			</div>
 
-			<div class="col-system">
+			<div class="col-system about-top-animate">
 				<div class="col-30">
 					<h2 class="about-body midnight-text-color">About the site.</h2>
 				</div>
@@ -57,7 +64,7 @@ import externalLink from '../assets/icons/link-arrow.svg';
 					</div>
 				</div>
 				<div class="col-30 about-log-text-group">
-					<h3 class="section-title midnight-text-color content-hidden-right">Logged items.</h3>
+					<h3 class="section-title midnight-text-color content-hidden-right">Archiving.</h3>
 					<div class="about-log-text">
 						<p class="section-body midnight-text-color content-hidden-right">design</p>
 						<p class="section-body midnight-text-color content-hidden-right">travel</p>
@@ -124,10 +131,17 @@ import externalLink from '../assets/icons/link-arrow.svg';
 
 		<div id="dark-mode" class="dark-mode">
 			<div class="about-header">
-				<h1 id="hero-dark" class="hero-title midnight-text-color">Personal log.</h1>
+				<div class="page-header">
+					<div>
+						<h1 id="heading-dark-one" class="hero-title midnight-text-color">Personal</h1>
+					</div>
+					<div>
+						<h1 id="heading-dark-two" class="hero-title midnight-text-color">archive.</h1>
+					</div>
+				</div>
 			</div>
 
-			<div class="col-system">
+			<div class="col-system about-top-animate">
 				<div class="col-30">
 					<h2 class="about-body midnight-text-color">About the site.</h2>
 				</div>
@@ -163,7 +177,7 @@ import externalLink from '../assets/icons/link-arrow.svg';
 					</div>
 				</div>
 				<div class="col-30 about-log-text-group">
-					<h3 class="section-title midnight-text-color content-hidden-right">Logged items.</h3>
+					<h3 class="section-title midnight-text-color content-hidden-right">Archiving.</h3>
 					<div class="about-log-text">
 						<p class="section-body midnight-text-color content-hidden-right">design</p>
 						<p class="section-body midnight-text-color content-hidden-right">travel</p>
@@ -248,8 +262,10 @@ import externalLink from '../assets/icons/link-arrow.svg';
 		});
 	};
 
-	separate('hero-light');
-	separate('hero-dark');
+	separate('heading-light-one');
+	separate('heading-light-two');
+	separate('heading-dark-one');
+	separate('heading-dark-two');
 
 	const emailButton = document.getElementById('about-email');
     const successMessage = document.getElementById('copied-success')
@@ -308,4 +324,44 @@ import externalLink from '../assets/icons/link-arrow.svg';
 
 	const hiddenElementsLeft = document.querySelectorAll(".content-hidden-left");
 	hiddenElementsLeft.forEach((el) => observerLeft.observe(el));
+
+	import { gsap } from 'gsap';
+	const tl = gsap.timeline();
+	tl.to('.hero-title > .letter:nth-child(1)', 0.5, {
+		y: 0,
+		delay: 1,
+	})
+	.to('.hero-title > .letter:nth-child(2)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(3)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(4)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(5)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(6)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(7)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.hero-title > .letter:nth-child(8)', 0.5, {
+		y: 0,
+		delay: -.45,
+	})
+	.to('.about-top-animate', 0.5, {
+		y: 0,
+		opacity: 1,
+		delay: -.5,
+	})
 </script>

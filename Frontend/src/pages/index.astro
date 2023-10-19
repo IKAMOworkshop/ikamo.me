@@ -43,7 +43,7 @@ const formattedLogs = formatLogPost(posts);
 			</div>
 		</div>
 
-		<ul class="log-tiles">
+		<ul class="log-tiles log-tiles-animate">
 			{formattedLogs.map(post => (
 				<a href={`/logs/${post.slug.current}`} class="log-tile rounded-40 over scroll-trigger">
 					<img src={urlForImage(post.thumbnailImage).url()} alt="" class="thumb-image-cover">
@@ -79,7 +79,7 @@ const formattedLogs = formatLogPost(posts);
 				</div>
 			</div>
 
-			<ul class="log-tiles-dark">
+			<ul class="log-tiles-dark log-tiles-animate">
 				{posts.map(post => (
 					<a href={`/logs/${post.slug.current}`} class="log-tile-dark over scroll-trigger">
 						<h1 class="midnight-text-color project-list-title">{post.title}</h1>
@@ -116,11 +116,11 @@ const formattedLogs = formatLogPost(posts);
 	separate("heading-dark-one");
 	separate("heading-dark-two");
 
-	import { gsap, Power2 } from 'gsap';
+	import { gsap } from 'gsap';
 	const tl = gsap.timeline();
 	tl.to('.hero-title > .letter:nth-child(1)', 0.5, {
 		y: 0,
-		delay: .8,
+		delay: 1,
 	})
 	.to('.hero-title > .letter:nth-child(2)', 0.5, {
 		y: 0,
@@ -145,5 +145,10 @@ const formattedLogs = formatLogPost(posts);
 	.to('.hero-title > .letter:nth-child(7)', 0.5, {
 		y: 0,
 		delay: -.45,
+	})
+	.to('.log-tiles-animate', 0.5, {
+		y: 0,
+		opacity: 1,
+		delay: -.5,
 	})
 </script>

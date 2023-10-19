@@ -296,11 +296,17 @@ a{
 }
 
 // Typography
-.hero-title, .not-found-title{
+.hero-title{
     font-size: 14rem;
     font-weight: 700;
     line-height: 13rem;
     overflow: hidden;
+}
+
+.not-found-title{
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 13rem;
 }
 
 .hero-body{
@@ -346,6 +352,7 @@ a{
     font-size: 1.5rem;
     line-height: 1.8rem;
     font-weight: 700;
+    overflow: hidden;
 }
 
 .project-tag{
@@ -369,7 +376,26 @@ a{
     transform: translateY(200px);
 }
 
+.log-text-animate{
+    transition: filter .5s ease;
+    display: inline-block;
+    transform: translateY(60px);
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+
+.letter-static{
+    transition: filter .5s ease;
+    transform: translateY(200px);
+}
+
 .letter:hover{
+    filter: blur(10px);
+}
+
+.letter-static:hover{
     filter: blur(10px);
 }
 
