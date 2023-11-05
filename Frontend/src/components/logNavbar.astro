@@ -31,7 +31,7 @@ import loaderImage from '../assets/icons/loader-logo.svg';
                 </a>
             </div>
             <div class="social-links">
-                <button><img src={mailIcon.src} alt="" class="social-link"></button>
+                <button id="nav-email"><img src={mailIcon.src} alt="" class="social-link"></button>
                 <a target="_blank" href=""><img src={githubIcon.src} alt="" class="social-link"></a>
                 <a target="_blank" href=""><img src={linkedinIcon.src} alt="" class="social-link"></a>
             </div>
@@ -72,6 +72,30 @@ import loaderImage from '../assets/icons/loader-logo.svg';
     };
 
     menuButton.addEventListener('click', toggleMenu);
+
+    const emailButton = document.getElementById('nav-email');
+    const successMessage = document.getElementById('copied-success')
+    const failedMessage = document.getElementById('copy-failed');
+
+        function copyEmail() {
+            navigator.clipboard.writeText("changjeremy0226@gmail.com").then(() => {
+                console.log('Content copied to clipboard');
+                successMessage.style.opacity = "1";
+                setTimeout(() => {
+                    successMessage.style.opacity = "0";
+                }, 5000);
+                /* Resolved - text copied to clipboard successfully */
+            },() => {
+                console.error('Failed to copy');
+                failedMessage.style.opacity = "1";
+                setTimeout(() => {
+                    failedMessage.style.opacity = "0";
+                }, 5000);
+                /* Rejected - text failed to copy to the clipboard */
+            });
+        }
+
+        emailButton.addEventListener('click', copyEmail);
 
     // Underline Hover Animation
     homeLink.addEventListener('mouseover', () =>{

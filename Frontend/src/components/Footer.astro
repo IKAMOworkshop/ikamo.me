@@ -51,6 +51,29 @@
         aboutUnderline.style.transform = 'scaleX(0)';
     });
 
+    const successMessage = document.getElementById('copied-success')
+    const failedMessage = document.getElementById('copy-failed');
+
+        function copyEmail() {
+            navigator.clipboard.writeText("changjeremy0226@gmail.com").then(() => {
+                console.log('Content copied to clipboard');
+                successMessage.style.opacity = "1";
+                setTimeout(() => {
+                    successMessage.style.opacity = "0";
+                }, 5000);
+                /* Resolved - text copied to clipboard successfully */
+            },() => {
+                console.error('Failed to copy');
+                failedMessage.style.opacity = "1";
+                setTimeout(() => {
+                    failedMessage.style.opacity = "0";
+                }, 5000);
+                /* Rejected - text failed to copy to the clipboard */
+            });
+        }
+
+        emailLink.addEventListener('click', copyEmail);
+
     const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
